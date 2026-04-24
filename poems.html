@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8" /><link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet" />
+  <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
   <nav><div class="nav-inner">
-    <a href="index.html" class="nav-logo">સંજય શાહ</a>
+    <a href="index.html" class="nav-logo"><span class="logo-mark">SS</span>સંજય શાહ</a>
     <ul class="nav-links">
       <li><a href="index.html">હોમ</a></li>
       <li><a href="about.html">મારી કહાની</a></li>
       <li><a href="poems.html" class="active">કવિતાઓ</a></li>
       <li><a href="contact.html">સંપર્ક</a></li>
     </ul>
+    <button id="theme-toggle">🌓</button>
   </div></nav>
+
   <section class="container" style="padding: 5rem 0;">
     <span class="section-label">શબ્દ સંગ્રહ</span>
     <div class="grid-3">
@@ -34,5 +37,14 @@
       <div class="card"><p>તમારા ચહેરા પરનું સ્મિત એ કુદરતે તમને આપેલી Gift છે પણ સાહેબ એ જ સ્મિત જો તમે કોઈના ચહેરા પર લાવી શકો તો એ તમે કુદરતને આપેલી Best Return Gift છે 🌺 😊 🙏</p></div>
     </div>
   </section>
+
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      var c = document.documentElement.getAttribute('data-theme');
+      var n = c === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', n);
+      localStorage.setItem('theme', n);
+    });
+  </script>
 </body>
 </html>
