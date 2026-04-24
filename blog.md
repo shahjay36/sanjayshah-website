@@ -1,7 +1,9 @@
 ---
-layout: page
-title: Blog
+---
+layout: home
+title: કવિતાઓ
 permalink: /blog/
+---
 ---
 
 # કવિતાઓ (Poems)
