@@ -1,17 +1,18 @@
+/* KRUTI'S THEME VARIABLES */
 :root {
-  /* Kruti's Purple Palette */
   --purple-25: #f8f7ff;
   --purple-50: #f0eeff;
   --purple-100: #e0dcff;
   --purple-600: #6c5fc7;
   --purple-900: #1a1035;
-  --gray-500: #64748b;
+  --gray-500: #9896a8;
+  --white: #ffffff;
   
   --primary-bg: var(--purple-25);
   --nav-bg: rgba(255, 255, 255, 0.8);
   --text-main: var(--purple-900);
   --accent: var(--purple-600);
-  --glass-border: var(--purple-100);
+  --border: var(--purple-100);
 }
 
 [data-theme='dark'] {
@@ -19,29 +20,29 @@
   --nav-bg: rgba(15, 23, 42, 0.9);
   --text-main: #f8fafc;
   --accent: #a78bfa;
-  --glass-border: rgba(255, 255, 255, 0.1);
+  --border: rgba(255, 255, 255, 0.1);
   --gray-500: #94a3b8;
+  --white: #1e293b;
 }
 
 body {
   margin: 0;
   background: var(--primary-bg);
   color: var(--text-main);
-  font-family: 'Inter', sans-serif;
-  transition: 0.3s ease;
+  font-family: 'Inter', -apple-system, sans-serif;
+  transition: background 0.3s ease;
 }
 
-/* Navigation - Kruti Style */
+/* NAVIGATION */
 nav {
   background: var(--nav-bg);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--border);
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0.75rem 0;
+  padding: 0.8rem 0;
 }
-
 .nav-inner {
   max-width: 1100px;
   margin: 0 auto;
@@ -50,95 +51,86 @@ nav {
   align-items: center;
   padding: 0 20px;
 }
-
-.nav-logo {
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--text-main);
-  font-size: 1.2rem;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-  margin: 0;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-main);
-  opacity: 0.7;
-  font-size: 0.95rem;
-}
-
+.nav-logo { font-weight: 700; text-decoration: none; color: var(--text-main); font-size: 1.2rem; }
+.nav-links { display: flex; list-style: none; gap: 1.5rem; margin: 0; }
+.nav-links a { text-decoration: none; color: var(--text-main); opacity: 0.7; font-size: 0.9rem; transition: 0.2s; }
 .nav-links a.active { opacity: 1; color: var(--accent); font-weight: 600; }
 
-/* Icon-Only Theme Toggle */
+/* ICON ONLY TOGGLE */
 #theme-toggle {
   background: transparent;
-  border: 1px solid var(--glass-border);
+  border: 1px solid var(--border);
   color: var(--text-main);
   cursor: pointer;
   padding: 8px;
   border-radius: 8px;
   display: flex;
   align-items: center;
-  transition: 0.2s;
 }
 
-#theme-toggle:hover { background: var(--purple-100); }
-
-#theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
-
-/* BookBlock Animation & Buttons */
-.book-container {
-  max-width: 800px;
-  margin: 50px auto;
+/* BOOK LAYOUT */
+.book-wrapper {
+  max-width: 900px;
+  margin: 60px auto;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bb-bookblock {
+.book {
+  width: 450px;
+  height: 600px;
+  position: relative;
+  perspective: 1500px;
+}
+
+.page {
+  position: absolute;
   width: 100%;
-  height: 500px;
-  background: white;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-  border-radius: 8px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 1;
 }
 
-.bb-item {
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: inset 3px 0 10px rgba(0,0,0,0.05);
 }
 
-/* Ditto Animation Side Buttons */
-.book-nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    background: var(--accent);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
+.back { transform: rotateY(180deg); }
+.page.flipped { transform: rotateY(-180deg); }
 
-#bb-nav-prev { left: -70px; }
-#bb-nav-next { right: -70px; }
-
-.page-num {
-    margin-top: auto;
-    text-align: center;
-    font-weight: 700;
-    color: var(--accent);
-    font-size: 0.9rem;
+/* SIDE BUTTONS */
+.nav-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  z-index: 100;
+  box-shadow: 0 4px 15px rgba(108, 95, 199, 0.3);
+  transition: 0.3s;
 }
+.nav-btn:hover { transform: scale(1.1); background: var(--purple-900); }
+.nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* CONTENT STYLING */
+.poem-text { flex-grow: 1; display: flex; align-items: center; text-align: center; font-size: 1.2rem; line-height: 1.7; font-family: 'Noto Serif Gujarati', serif; }
+.page-num { text-align: center; font-size: 0.8rem; font-weight: bold; color: var(--gray-500); border-top: 1px solid var(--border); padding-top: 10px; }
