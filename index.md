@@ -1,6 +1,9 @@
 ---
-layout: home
+---
+layout: page
 title: મુખ્ય પૃષ્ઠ
+---
+(Keep your Gujarati intro text here)
 ---
 
 # શબ્દોના સથવારે - સંજય શાહના આંગણે આપનું સ્વાગત છે 🌸
