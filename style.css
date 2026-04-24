@@ -1,9 +1,9 @@
 :root {
-  --body-bg: #f4f1ea;   /* Warm Poetic Background */
-  --page-bg: #fdfbf7;   /* Clean Paper Color */
+  --body-bg: #e8e2d6;   /* Deep Poetic Parchment Background */
+  --page-bg: #fdfbf7;   /* Paper Color */
   --ink: #1a1a1b;
-  --gold: #c4a484;
-  --spine: #e2ddd3;
+  --gold: #8b5e3c;
+  --cover-bg: #2c3e50;  /* Midnight Sky Cover */
 }
 
 body { 
@@ -11,98 +11,87 @@ body {
   color: var(--ink); 
   font-family: 'Noto Serif Gujarati', serif;
   margin: 0;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  overflow-x: hidden;
 }
 
-/* Centered Navigation */
-nav { padding: 1.5rem 0; border-bottom: 1px solid rgba(196, 164, 132, 0.3); background: rgba(255,255,255,0.2); }
-.nav-inner { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
-.nav-links { display: flex; list-style: none; gap: 2rem; padding: 0; margin: 0; }
-.nav-links a { text-decoration: none; color: var(--ink); font-weight: 600; opacity: 0.6; transition: 0.3s; }
+nav { padding: 1rem 0; background: rgba(255,255,255,0.1); border-bottom: 1px solid rgba(0,0,0,0.1); }
+.nav-inner { display: flex; flex-direction: column; align-items: center; }
+.nav-links { display: flex; list-style: none; gap: 2rem; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--ink); font-weight: 600; opacity: 0.6; }
 .nav-links a.active { opacity: 1; color: var(--gold); }
 
-/* 3D Book Container */
+/* 3D Book Layout */
 .book-wrapper {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 2000px; /* Essential for 3D */
-  padding: 40px;
+  perspective: 2000px;
+  padding: 20px;
 }
 
 .book {
-  width: 700px; /* Total Landscape Width */
-  height: 450px;
+  width: 400px; /* Width of one page */
+  height: 550px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
 
+/* Page Logic - Two sides to fix inversion */
 .page {
   position: absolute;
-  width: 350px; /* Half width - each page hinges */
+  width: 100%;
   height: 100%;
   top: 0;
-  right: 0;
-  background: var(--page-bg);
+  left: 0;
   transform-origin: left;
-  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 1;
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden; /* This stops the mirroring */
+  padding: 40px 30px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  box-sizing: border-box;
-  border: 1px solid rgba(0,0,0,0.06);
-  box-shadow: inset 3px 0px 20px rgba(0,0,0,0.02);
+  box-shadow: inset 3px 0px 20px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
-/* The Spine/Shadow Effect */
-.page::after {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 10px;
-  background: linear-gradient(to right, rgba(0,0,0,0.05), transparent);
+.front { background: var(--page-bg); z-index: 2; }
+.back { 
+    background: var(--page-bg); 
+    transform: rotateY(180deg); /* Pre-flip the back so it looks right when turned */
 }
 
-.page.flipped {
-  transform: rotateY(-180deg);
+/* Page Header & Footer */
+.page-header { text-align: right; font-size: 0.9rem; color: var(--gold); border-bottom: 1px solid rgba(0,0,0,0.05); padding-bottom: 5px; margin-bottom: 20px; }
+.page-footer { margin-top: auto; border-top: 1px solid rgba(0,0,0,0.1); padding-top: 10px; text-align: center; font-size: 0.8rem; }
+
+/* The Cover Page */
+.cover {
+    background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1000');
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 5px solid #1a252f;
 }
 
-.poem-text {
-  text-align: center;
-  font-size: 1.3rem;
-  line-height: 2;
-}
+.page.flipped { transform: rotateY(-180deg); }
 
-/* Control Buttons */
-.book-controls {
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  align-items: center;
-}
-
-.btn-nav {
-  background: var(--gold);
-  color: white;
-  border: none;
-  padding: 10px 25px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-family: inherit;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-nav:disabled {
-  background: #d1cfc9;
-  cursor: not-allowed;
-}
+.btn-nav { background: var(--gold); color: white; border: none; padding: 10px 25px; cursor: pointer; border-radius: 4px; font-family: inherit; margin: 20px 10px; }
+.btn-nav:disabled { background: #ccc; }
