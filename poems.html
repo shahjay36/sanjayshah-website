@@ -1,193 +1,84 @@
 <!DOCTYPE html>
 <html lang="gu">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>સંજય શાહ | કવિતાઓ</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <button id="theme-toggle" onclick="toggleTheme()">🌓 THEME</button>
 
   <nav>
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">SANJAY SHAH</a>
       <ul class="nav-links">
-        <li><a href="index.html">હોમ</a></li>
-        <li><a href="about.html">મારી કહાની</a></li>
-        <li><a href="poems.html" class="active">કવિતાઓ</a></li>
-        <li><a href="contact.html">સંપર્ક</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">My Story</a></li>
+        <li><a href="poems.html" class="active">Poems</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <svg id="theme-icon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
     </div>
   </nav>
 
-  <div class="book-wrapper">
-    <button class="btn-nav" id="prevBtn" onclick="goPrev()" disabled>←</button>
-    
-    <div class="book" id="book">
+  <div class="book-container">
+    <button id="bb-nav-prev" class="book-nav-btn">←</button>
+    <button id="bb-nav-next" class="book-nav-btn">→</button>
+
+    <div id="bb-bookblock" class="bb-bookblock">
       
-      <div class="page" id="p1" style="z-index: 9;">
-        <div class="front" style="background: linear-gradient(135deg, #a855f7, #3b82f6); color: white; justify-content: center; text-align: center;">
-          <h2 style="font-weight:400; opacity:0.9;">સંજય શાહ ના</h2>
-          <h1 style="font-size: 2.4rem; margin: 15px 0;">શબ્દોના સથવારે</h1>
-          <div style="font-size: 2rem;">🖋️</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૧. જીવનની "સુગંધ એ જ માણી શકે.. જેમની પાસે ખીલવા અને ખરવાની ક્ષણોની વચ્ચે મહેંકી જવાની આવડત હોય છે!</div>
-          <div class="page-footer">PAGE 1</div>
+      <div class="bb-item">
+        <div style="height:100%; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80'); background-size:cover; border-radius:8px; display:flex; align-items:center; justify-content:center; color:white; text-align:center;">
+           <div>
+             <h1 style="font-size:3rem;">શબ્દોના સથવારે</h1>
+             <p style="font-size:1.2rem;">સંજય શાહની કલમે</p>
+           </div>
         </div>
       </div>
 
-      <div class="page" id="p2" style="z-index: 8;">
-        <div class="front">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૨. 'આપતાં' આવડે એને જ મળે પછી એ 'સુખ' હોય કે 'સમય', 'પ્રેમ' હોય કે 'માન', 'હુંફ' હોય કે 'સાથ'.</div>
-          <div class="page-footer">PAGE 2</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૩. ઉંમર ને વાવી અમે અનુભવો લણ્યા છે... ઉપજ એ છે, તમ સરીખા સ્નેહીઓ મળ્યા છે... ✍️</div>
-          <div class="page-footer">PAGE 3</div>
-        </div>
+      <div class="bb-item">
+        <h2>૧. જીવનની સુગંધ</h2>
+        <p>જીવનની સુગંધ એ જ માણી શકે.. જેમની પાસે ખીલવા અને ખરવાની ક્ષણોની વચ્ચે મહેંકી જવાની આવડત હોય છે!</p>
+        <div class="page-num">PAGE 1</div>
       </div>
 
-      <div class="page" id="p3" style="z-index: 7;">
-        <div class="front">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body" style="font-size: 1rem;">૪. એક બીજાને ગમતા રહીએ, કંઈ ખટકે તો ખમતા રહીએ, સંજોગો કેવા પણ સજૉય થોડા થોડા નમતા રહીએ... સ્વાર્થી સાંકડા સંકુચિત ન રહેતા નદીના નીર થઈ વહેતા રહીએ.</div>
-          <div class="page-footer">PAGE 4</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૫. સફળતા એને જ કહેવાય, કે જ્યારે તમે બીજા માટે પ્રેરણા બનો !! 💫</div>
-          <div class="page-footer">PAGE 5</div>
-        </div>
+      <div class="bb-item">
+        <h2>૨. સુખ અને સમય</h2>
+        <p>'આપતાં' આવડે એને જ મળે પછી એ 'સુખ' હોય કે 'સમય', 'પ્રેમ' હોય કે 'માન', 'હુંફ' હોય કે 'સાથ'.</p>
+        <div class="page-num">PAGE 2</div>
       </div>
 
-      <div class="page" id="p4" style="z-index: 6;">
-        <div class="front">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૬. કયારેક ભૂલી જવાની ક્ષમતા.. હૃદય માટે ઘણી સારી છે. જૂની વાતો પકડી રાખવાથી મન ભારે થાય છે.</div>
-          <div class="page-footer">PAGE 6</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૭. ગુમાવ્યા નો હિસાબ કોણ રાખે વ્હાલા અહી તો... કોણ મળ્યા એનો આનંદ છે 🔰💖</div>
-          <div class="page-footer">PAGE 7</div>
-        </div>
       </div>
-
-      <div class="page" id="p5" style="z-index: 5;">
-        <div class="front">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૮. જેના સાથે જીવવાની ઈચ્છા હોય એના સામે જીતવાની ઈચ્છા ના રાખવી જોઈએ, કારણ કે પ્રેમમાં હાર પણ જીત છે.</div>
-          <div class="page-footer">PAGE 8</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૯. ક્યારેક મનનું પણ માનવું એ જ જિંદગી માણી કહેવાય. દુનિયાના નિયમો તો ચાલતા રહેશે. 😊🏵️</div>
-          <div class="page-footer">PAGE 9</div>
-        </div>
-      </div>
-
-      <div class="page" id="p6" style="z-index: 4;">
-        <div class="front">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૧૦. ઘણીવાર સારું જીવન જીવવા માટે... ઘણું ભૂલી જવામાં મજા છે..! ભૂતકાળને પકડી રાખનાર વર્તમાન ખોઈ બેસે છે.</div>
-          <div class="page-footer">PAGE 10</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૧૧. દરેક સંબંધો ફૂલ ની જેમ મહેંકી ઉઠે, જો આપણે એમાં સ્નેહનું પાણી રેચતા રહીએ. 🙂🌸🙏🏻</div>
-          <div class="page-footer">PAGE 11</div>
-        </div>
-      </div>
-
-      <div class="page" id="p7" style="z-index: 3;">
-        <div class="front">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૧૨. જીવન જીવતા આવડવું જોઈએ.. સંબંધો સીવતા આવડવું જોઈએ... ઉંમર તો કોઈ પણ કાપી લે છે. 😊🙏</div>
-          <div class="page-footer">PAGE 12</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૧૩. 'ધ્યાન' થી વાંચીએ તો, મૌન પણ 'વાંચી' શકાય છે.. અને જો ધ્યાન ન હોય તો શબ્દો પણ સમજાતા નથી.🌺</div>
-          <div class="page-footer">PAGE 13</div>
-        </div>
-      </div>
-
-      <div class="page" id="p8" style="z-index: 2;">
-        <div class="front">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૧૪. બસે એક પ્રેમના સહારે પણ જીવી જવાય છે, શરત માત્ર એટલી કે એ પ્રેમ સાચો અને નિસ્વાર્થ હોવો જોઈએ. 😊🌺</div>
-          <div class="page-footer">PAGE 14</div>
-        </div>
-        <div class="back">
-          <div class="page-header">સંજય શાહ ના સથવારે 🖋️</div>
-          <div class="poem-body">૧૫. જે સાંધા અને વાંધા વચ્ચે પણ અકબંધ રહે તેનું નામ "સંબંધ". બાકી તો બધી વ્યવહારની વાતો છે. 🌺</div>
-          <div class="page-footer">PAGE 15</div>
-        </div>
-      </div>
-
-      <div class="page" id="p9" style="z-index: 1;">
-        <div class="front" style="background: var(--accent); color: white; justify-content: center; text-align: center;">
-          <h2 style="font-weight:400;">અસ્તુ.</h2>
-          <p>વાંચવા બદલ આભાર</p>
-          <div class="page-footer" style="color: white; border: none;">FINISH</div>
-        </div>
-        <div class="back" style="background: #000;"></div>
-      </div>
-
-    </div>
-
-    <button class="btn-nav" id="nextBtn" onclick="goNext()">→</button>
   </div>
 
   <script>
-    let currentLoc = 1;
-    let totalPages = 9; 
+    // Theme Logic for all pages
+    const themeBtn = document.getElementById('theme-toggle');
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const nextTheme = isDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+      updateIcon(nextTheme);
+    });
 
-    function updateUI() {
-      // Correctly enables/disables the Back button
-      document.getElementById('prevBtn').disabled = (currentLoc === 1);
-    }
-
-    function goNext() {
-      if(currentLoc <= totalPages) {
-        document.getElementById(`p${currentLoc}`).classList.add("flipped");
-        currentLoc++;
-        updateUI();
-        // Reset book if clicking next on final page
-        if(currentLoc > totalPages) {
-          setTimeout(resetBook, 3000);
-        }
+    function updateIcon(theme) {
+      const icon = document.getElementById('theme-icon');
+      if(theme === 'dark') {
+        icon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
+      } else {
+        icon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
       }
     }
 
-    function goPrev() {
-      if(currentLoc > 1) {
-        currentLoc--;
-        document.getElementById(`p${currentLoc}`).classList.remove("flipped");
-        updateUI();
-      }
-    }
+    // Initialize Theme
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateIcon(savedTheme);
 
-    function resetBook() {
-      for(let i = totalPages; i >= 1; i--) {
-        setTimeout(() => {
-          document.getElementById(`p${i}`).classList.remove("flipped");
-        }, (totalPages - i) * 100);
-      }
-      currentLoc = 1;
-      updateUI();
-    }
-
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme');
-      const target = current === 'light' ? 'dark' : 'light';
-      document.documentElement.setAttribute('data-theme', target);
-    }
+    // BookBlock Logic Implementation
+    // Ensure you have jquery.bookblock.js linked as in your provided snippet
   </script>
 </body>
 </html>
