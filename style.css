@@ -1,123 +1,144 @@
 :root {
-  --primary-bg: #0f172a; /* Deep dark slate */
-  --nav-bg: rgba(15, 23, 42, 0.8);
-  --accent: #a855f7; /* Modern Purple */
-  --glass: rgba(255, 255, 255, 0.03);
-  --glass-border: rgba(255, 255, 255, 0.1);
-  --text-main: #f8fafc;
+  /* Kruti's Purple Palette */
+  --purple-25: #f8f7ff;
+  --purple-50: #f0eeff;
+  --purple-100: #e0dcff;
+  --purple-600: #6c5fc7;
+  --purple-900: #1a1035;
+  --gray-500: #64748b;
+  
+  --primary-bg: var(--purple-25);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --text-main: var(--purple-900);
+  --accent: var(--purple-600);
+  --glass-border: var(--purple-100);
 }
 
-[data-theme='light'] {
-  --primary-bg: #f1f5f9;
-  --nav-bg: rgba(255, 255, 255, 0.8);
-  --accent: #7c3aed;
-  --glass: rgba(0, 0, 0, 0.05);
-  --glass-border: rgba(0, 0, 0, 0.1);
-  --text-main: #1e293b;
+[data-theme='dark'] {
+  --primary-bg: #0f172a;
+  --nav-bg: rgba(15, 23, 42, 0.9);
+  --text-main: #f8fafc;
+  --accent: #a78bfa;
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --gray-500: #94a3b8;
 }
 
 body {
   margin: 0;
   background: var(--primary-bg);
   color: var(--text-main);
-  font-family: 'Inter', 'Noto Serif Gujarati', sans-serif;
-  transition: background 0.4s ease;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  transition: 0.3s ease;
 }
 
-/* Fixed Theme Toggle */
-#theme-toggle {
-  position: fixed;
-  top: 90px;
-  right: 20px;
-  z-index: 1000;
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-}
-
-/* Modern Navigation */
+/* Navigation - Kruti Style */
 nav {
   background: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  padding: 1.2rem 0;
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
+  padding: 0.75rem 0;
 }
-.nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--accent); text-decoration: none; letter-spacing: 1px; }
-.nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; }
-.nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; opacity: 0.7; transition: 0.3s; }
-.nav-links a.active { opacity: 1; color: var(--accent); border-bottom: 2px solid var(--accent); }
 
-/* The Book Layout */
-.book-wrapper {
-  flex-grow: 1;
+.nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 30px;
-  padding: 40px 20px;
+  padding: 0 20px;
 }
 
-.book {
-  width: 400px;
-  height: 580px;
-  position: relative;
-  transform-style: preserve-3d;
+.nav-logo {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text-main);
+  font-size: 1.2rem;
 }
 
-.page {
-  position: absolute;
-  width: 100%; height: 100%;
-  transform-origin: left;
-  transform-style: preserve-3d;
-  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.front, .back {
-  position: absolute;
-  width: 100%; height: 100%;
-  backface-visibility: hidden;
-  background: var(--glass);
-  backdrop-filter: blur(15px);
-  border: 1px solid var(--glass-border);
-  padding: 45px 35px;
-  box-sizing: border-box;
+.nav-links {
   display: flex;
-  flex-direction: column;
-  border-radius: 0 15px 15px 0;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
 }
 
-.back { transform: rotateY(180deg); border-radius: 15px 0 0 15px; }
-.page.flipped { transform: rotateY(-180deg); }
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-main);
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
 
-/* Internal Page Styling */
-.page-header { text-align: right; color: var(--accent); font-size: 0.85rem; font-weight: bold; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px; margin-bottom: 25px; }
-.poem-body { flex-grow: 1; display: flex; align-items: center; text-align: center; font-size: 1.15rem; line-height: 1.8; }
-.page-footer { border-top: 1px solid var(--glass-border); padding-top: 15px; text-align: center; font-size: 0.9rem; font-weight: 700; color: var(--accent); }
+.nav-links a.active { opacity: 1; color: var(--accent); font-weight: 600; }
 
-/* Modern Controls */
-.btn-nav {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid var(--accent);
+/* Icon-Only Theme Toggle */
+#theme-toggle {
   background: transparent;
-  color: var(--accent);
-  font-size: 1.5rem;
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
   cursor: pointer;
-  transition: 0.3s;
-  display: flex; align-items: center; justify-content: center;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  transition: 0.2s;
 }
-.btn-nav:hover:not(:disabled) { background: var(--accent); color: white; box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
-.btn-nav:disabled { border-color: #334155; color: #334155; cursor: not-allowed; }
+
+#theme-toggle:hover { background: var(--purple-100); }
+
+#theme-toggle svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+
+/* BookBlock Animation & Buttons */
+.book-container {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.bb-bookblock {
+  width: 100%;
+  height: 500px;
+  background: white;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.bb-item {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+/* Ditto Animation Side Buttons */
+.book-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#bb-nav-prev { left: -70px; }
+#bb-nav-next { right: -70px; }
+
+.page-num {
+    margin-top: auto;
+    text-align: center;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+}
