@@ -1,73 +1,77 @@
 :root {
-  --primary-bg: #0f172a; /* Kruti's deep dark blue */
-  --nav-bg: rgba(30, 41, 59, 0.7);
-  --accent: #a855f7; /* Vibrant Purple */
-  --secondary: #3b82f6; /* Electric Blue */
-  --text-bright: #ffffff;
-  --glass: rgba(255, 255, 255, 0.05);
+  --primary-bg: #0f172a; /* Deep dark slate */
+  --nav-bg: rgba(15, 23, 42, 0.8);
+  --accent: #a855f7; /* Modern Purple */
+  --glass: rgba(255, 255, 255, 0.03);
   --glass-border: rgba(255, 255, 255, 0.1);
+  --text-main: #f8fafc;
 }
 
 [data-theme='light'] {
-  --primary-bg: #f8fafc;
+  --primary-bg: #f1f5f9;
   --nav-bg: rgba(255, 255, 255, 0.8);
   --accent: #7c3aed;
-  --text-bright: #1e293b;
-  --glass: rgba(0, 0, 0, 0.03);
+  --glass: rgba(0, 0, 0, 0.05);
+  --glass-border: rgba(0, 0, 0, 0.1);
+  --text-main: #1e293b;
 }
 
 body {
   margin: 0;
   background: var(--primary-bg);
-  color: var(--text-bright);
+  color: var(--text-main);
   font-family: 'Inter', 'Noto Serif Gujarati', sans-serif;
-  transition: 0.3s ease;
+  transition: background 0.4s ease;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Glass Navbar */
+/* Fixed Theme Toggle */
+#theme-toggle {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+/* Modern Navigation */
 nav {
   background: var(--nav-bg);
-  backdrop-filter: blur(12px);
-  padding: 1rem 0;
+  backdrop-filter: blur(10px);
+  padding: 1.2rem 0;
   border-bottom: 1px solid var(--glass-border);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--accent); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
+.nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--accent); text-decoration: none; letter-spacing: 1px; }
 .nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; }
-.nav-links a { color: var(--text-bright); text-decoration: none; font-weight: 500; opacity: 0.7; transition: 0.3s; }
-.nav-links a.active { opacity: 1; color: var(--accent); }
+.nav-links a { color: var(--text-main); text-decoration: none; font-weight: 500; opacity: 0.7; transition: 0.3s; }
+.nav-links a.active { opacity: 1; color: var(--accent); border-bottom: 2px solid var(--accent); }
 
-/* Theme Toggle (Top Right) */
-#theme-toggle {
-  position: fixed;
-  top: 85px;
-  right: 20px;
-  z-index: 1000;
-  background: var(--accent);
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
-}
-
-/* The Book Aesthetic */
+/* The Book Layout */
 .book-wrapper {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  padding: 60px 20px;
+  gap: 30px;
+  padding: 40px 20px;
 }
 
 .book {
   width: 400px;
-  height: 550px;
+  height: 580px;
   position: relative;
   transform-style: preserve-3d;
 }
@@ -85,48 +89,35 @@ nav {
   width: 100%; height: 100%;
   backface-visibility: hidden;
   background: var(--glass);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
   border: 1px solid var(--glass-border);
-  padding: 40px;
+  padding: 45px 35px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  border-radius: 0 12px 12px 0;
+  border-radius: 0 15px 15px 0;
 }
 
-.back { transform: rotateY(180deg); border-radius: 12px 0 0 12px; }
+.back { transform: rotateY(180deg); border-radius: 15px 0 0 15px; }
 .page.flipped { transform: rotateY(-180deg); }
 
-/* Header/Footer Inside Pages */
-.page-header { 
-    text-align: right; 
-    font-size: 0.8rem; 
-    color: var(--accent); 
-    border-bottom: 1px solid var(--glass-border); 
-    padding-bottom: 8px; 
-    margin-bottom: 20px; 
-    text-transform: uppercase;
-}
-.page-footer { 
-    margin-top: auto; 
-    border-top: 1px solid var(--glass-border); 
-    padding-top: 15px; 
-    text-align: center; 
-    font-size: 0.9rem;
-    font-weight: bold;
-}
+/* Internal Page Styling */
+.page-header { text-align: right; color: var(--accent); font-size: 0.85rem; font-weight: bold; border-bottom: 1px solid var(--glass-border); padding-bottom: 10px; margin-bottom: 25px; }
+.poem-body { flex-grow: 1; display: flex; align-items: center; text-align: center; font-size: 1.15rem; line-height: 1.8; }
+.page-footer { border-top: 1px solid var(--glass-border); padding-top: 15px; text-align: center; font-size: 0.9rem; font-weight: 700; color: var(--accent); }
 
-/* Modern Neon Buttons */
+/* Modern Controls */
 .btn-nav {
-  width: 55px;
-  height: 55px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   border: 2px solid var(--accent);
   background: transparent;
   color: var(--accent);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: 0.3s;
+  display: flex; align-items: center; justify-content: center;
 }
-.btn-nav:hover:not(:disabled) { background: var(--accent); color: white; transform: scale(1.1); }
-.btn-nav:disabled { border-color: #475569; color: #475569; cursor: not-allowed; }
+.btn-nav:hover:not(:disabled) { background: var(--accent); color: white; box-shadow: 0 0 20px rgba(168, 85, 247, 0.5); }
+.btn-nav:disabled { border-color: #334155; color: #334155; cursor: not-allowed; }
