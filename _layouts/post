@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="post">
+  <h1>{{ page.title }}</h1>
+  <div class="entry">
+    {{ content }}
+  </div>
+
+  <hr>
+  <div
+    data-lyket-type="like"
+    data-lyket-id="{{ page.url }}"
+    data-lyket-namespace="sanjay-shah-poems"
+  ></div>
+  <script src="https://unpkg.com/@lyket/widget@latest/dist/lyket.js"></script>
+
+  <div id="disqus_thread" style="margin-top: 50px;"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = "{{ page.url | absolute_url }}";
+      this.page.identifier = "{{ page.url }}";
+    };
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://sanjayshah-poems.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+</article>
