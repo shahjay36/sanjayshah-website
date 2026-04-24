@@ -94,55 +94,41 @@
     </div>
 
     <script>
-        // BOOK ANIMATION LOGIC
-        let currentLoc = 1;
-        const maxLoc = 6;
+$(function() {
+    // These variables link the code to your HTML elements
+    var $book = $('#bb-bookblock');
+    var $navNext = $('#bb-nav-next');
+    var $navPrev = $('#bb-nav-prev');
+    var $current = $('#current-page-num');
+    var $total = $('#total-pages');
 
-        function updateButtons() {
-            document.getElementById('prevBtn').disabled = (currentLoc === 1);
-            document.getElementById('nextBtn').disabled = (currentLoc === maxLoc);
+    // 1. Initialize the BookBlock animation
+    $book.bookblock({
+        speed: 800,           
+        shadowSides: 0.8,     
+        shadowFlip: 0.7,      
+        onEndFlip: function(oldIndex, newIndex, isLimit) {
+            // This updates the number "1" to "2", etc., as you flip
+            $current.text(newIndex + 1);
         }
-
-        function goNext() {
-            if(currentLoc < maxLoc) {
-                document.getElementById(`p${currentLoc}`).classList.add("flipped");
-                currentLoc++;
-                updateButtons();
-            }
-        }
-
-        function goPrev() {
-            if(currentLoc > 1) {
-                currentLoc--;
-                document.getElementById(`p${currentLoc}`).classList.remove("flipped");
-                updateButtons();
-            }
-        }
-        updateButtons();
-    </script>
-  <script>
-    const themeBtn = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
-    
-    function updateIcon(theme) {
-        if(theme === 'dark') {
-            themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
-        } else {
-            themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
-        }
-    }
-
-    themeBtn.addEventListener('click', () => {
-        const current = document.documentElement.getAttribute('data-theme');
-        const target = current === 'dark' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', target);
-        localStorage.setItem('theme', target);
-        updateIcon(target);
     });
 
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateIcon(savedTheme);
+    // 2. Set the Total Pages count automatically
+    var pageCount = $book.bookblock('getItemsCount');
+    $total.text(pageCount);
+
+    // 3. Make the Right Arrow click-able
+    $navNext.on('click', function(e) {
+        e.preventDefault(); 
+        $book.bookblock('next');
+    });
+
+    // 4. Make the Left Arrow click-able
+    $navPrev.on('click', function(e) {
+        e.preventDefault(); 
+        $book.bookblock('prev');
+    });
+});
 </script>
 </body>
 </html>
