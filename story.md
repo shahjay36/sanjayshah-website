@@ -1,19 +1,62 @@
----
-layout: page
-title: મારી કહાની
-permalink: /story/
----
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>મારી કહાની | સંજય શાહ</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet">
+		<style>
+			body, h1, h2, h3, p, blockquote { font-family: 'Noto Serif Gujarati', serif !important; }
+            .image.main img { border-radius: 10px; }
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<header id="header">
+				<a href="index.html" class="logo">શબ્દ સૃષ્ટિ</a>
+			</header>
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">હોમ</a></li>
+					<li class="active"><a href="story.html">મારી કહાની</a></li>
+					<li><a href="contact.html">સંપર્ક</a></li>
+				</ul>
+			</nav>
 
-# મારી સફર: શબ્દો અને સંસ્કારોનો વારસો ✨
+			<div id="main">
+				<section class="post">
+					<header class="major">
+						<h1>મારી સફર: શબ્દો અને સંસ્કારોનો વારસો</h1>
+					</header>
+					<div class="image main"><img src="images/pic01.jpg" alt="" /></div>
+					<p>આજની ભાગદોડ ભરી જિંદગીમાં માણસ પોતાની જાત માટે સમય કાઢવાનું ભૂલી ગયો છે. માત્ર કામ, ચિંતા અને જવાબદારીઓ વચ્ચે આપણે 'જીવવાનું' જ ભૂલી ગયા છીએ. મારું લખવા પાછળનું મુખ્ય કારણ એ જ છે કે હું લોકોને પ્રોત્સાહિત કરી શકું—જીવનને મન ભરીને માણવા માટે.</p>
+					
+					<h3>પ્રેરણાનો સ્ત્રોત</h3>
+					<p>મારામાં રહેલી આ લખવાની કળા અને પ્રેરણા મને મારી <b>માતા</b> પાસેથી મળી છે. તે વ્યવસાયે શિક્ષિકા હતા અને ખૂબ જ સુંદર લખાણ લખતા. તેમની એક કવિતા જે મારા હૃદયની સૌથી નજીક છે, તે અહીં રજૂ કરું છું:</p>
+					
+					<blockquote style="font-size: 1.5rem; line-height: 2; color: #800000;">
+						એક બીજાને ગમતા રહીએ,<br />
+						કંઈ ખટકે તો ખમતા રહીએ,<br />
+						સંજોગો કેવા પણ સજૉય થોડા થોડા નમતા રહીએ...<br />
+						સ્વાર્થી સાંકડા સંકુચિત ન રહેતા નદીના નીર થઈ વહેતા રહીએ,<br />
+						વાત અંદર અંદર ન વાગોળતા એક મેકને કહેતા રહીએ,<br />
+						પડી ગાંઠના સરવાળા-બાદબાકી ન ક૨તાં<br />
+						મીઠા સંબંધોના ગુણાકાર કરતાં રહીએ...
+					</blockquote>
+				</section>
+			</div>
 
-આજની ભાગદોડ ભરી જિંદગીમાં માણસ પોતાની જાત માટે સમય કાઢવાનું ભૂલી ગયો છે. માત્ર કામ, ચિંતા અને જવાબદારીઓ વચ્ચે આપણે 'જીવવાનું' જ ભૂલી ગયા છીએ. મારું લખવા પાછળનું મુખ્ય કારણ એ જ છે કે હું લોકોને પ્રોત્સાહિત કરી શકું—જીવનને મન ભરીને માણવા માટે.
+			<div id="copyright">
+				<ul><li>&copy; સંજય શાહ</li></ul>
+			</div>
+		</div>
 
-### મારો ઉદ્દેશ્ય
-હું માનું છું કે મોટી સફળતાઓ માટે રાહ જોવી એના કરતાં, નાની નાની ખુશીઓમાં જીવવું અને પાર્ટી કરવી વધારે જરૂરી છે. ચિંતા છોડો, અને દરેક પળને ઉત્સવ બનાવો.
-
-### પ્રેરણાનો સ્ત્રોત 👩‍🏫
-મારામાં રહેલી આ લખવાની કળા અને પ્રેરણા મને મારી **માતા** પાસેથી મળી છે. તે વ્યવસાયે શિક્ષિકા હતા અને ખૂબ જ સુંદર લખાણ લખતા. તેમની એક કવિતા જે મારા હૃદયની સૌથી નજીક છે, તે અહીં રજૂ કરું છું:
-
-> **એક બીજાને ગમતા રહીએ,** > **કંઈ ખટકે તો ખમતા રહીએ,** > **સંજોગો કેવા પણ સજૉય થોડા થોડા નમતા રહીએ...** > **સ્વાર્થી સાંકડા સંકુચિત ન રહેતા નદીના નીર થઈ વહેતા રહીએ,** > **વાત અંદર અંદર ન વાગોળતા એક મેકને કહેતા રહીએ,** > **પડી ગાંઠના સરવાળા-બાદબાકી ન ક૨તાં** > **મીઠા સંબંધોના ગુણાકાર કરતાં રહીએ...**
-
-આ પંક્તિઓ જ મારા જીવનનો આધાર છે.
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
