@@ -1,14 +1,32 @@
----
-layout: page
-title: સંપર્ક
-permalink: /contact/
----
-
-# સંવાદ 💌
-
-જો તમને મારા વિચારો અથવા કવિતાઓ ગમી હોય, અથવા તમે તમારા મનના ભાવો મારી સાથે વહેંચવા માંગતા હોવ, તો મને ઈમેલ દ્વારા જરૂરથી જણાવશો. તમારી એક પ્રતિક્રિયા મારા ઉત્સાહમાં વધારો કરશે.
-
-**ઈમેલ આઈડી:** [sanjay36@gmail.com](mailto:sanjay36@gmail.com)
-
----
-*શબ્દો સાથે જોડાયેલા રહીએ...*
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>સંપર્ક | સંજય શાહ</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet">
+		<style>body, h1, h2, p, a { font-family: 'Noto Serif Gujarati', serif !important; }</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+			<header id="header"><a href="index.html" class="logo">શબ્દ સૃષ્ટિ</a></header>
+			<nav id="nav">
+				<ul class="links">
+					<li><a href="index.html">હોમ</a></li>
+					<li><a href="story.html">મારી કહાની</a></li>
+					<li class="active"><a href="contact.html">સંપર્ક</a></li>
+				</ul>
+			</nav>
+			<div id="main">
+				<section class="post" style="text-align: center;">
+					<header class="major">
+						<h1>સંવાદ 💌</h1>
+						<p>તમારા પ્રતિભાવો મારા માટે અમૂલ્ય છે.</p>
+					</header>
+					<p>જો તમને મારી કવિતાઓ ગમી હોય, તો તમે મને ઈમેલ દ્વારા જણાવી શકો છો:</p>
+					<h2><a href="mailto:sanjay36@gmail.com">sanjay36@gmail.com</a></h2>
+				</section>
+			</div>
+		</div>
+	</body>
+</html>
