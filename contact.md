@@ -1,10 +1,14 @@
 ---
 layout: page
-title: Contact
+title: સંપર્ક
 permalink: /contact/
 ---
 
-# Get in Touch
+# સંવાદ 💌
 
-If you would like to share your thoughts on my poetry, please email me at:
-[Insert Father's Email Here]
+જો તમને મારા વિચારો અથવા કવિતાઓ ગમી હોય, અથવા તમે તમારા મનના ભાવો મારી સાથે વહેંચવા માંગતા હોવ, તો મને ઈમેલ દ્વારા જરૂરથી જણાવશો. તમારી એક પ્રતિક્રિયા મારા ઉત્સાહમાં વધારો કરશે.
+
+**ઈમેલ આઈડી:** [sanjay36@gmail.com](mailto:sanjay36@gmail.com)
+
+---
+*શબ્દો સાથે જોડાયેલા રહીએ...*
