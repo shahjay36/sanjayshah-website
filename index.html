@@ -1,115 +1,74 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>સંજય શાહ | શબ્દ સૃષ્ટિ</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet">
-		<style>body, h1, h2, h3, p { font-family: 'Noto Serif Gujarati', serif !important; }</style>
-	</head>
-	<body class="is-preload">
-		<div id="wrapper" class="fade-in">
-			<div id="intro">
-				<h1>સંજય શાહ</h1>
-				<p>શબ્દોના સથવારે જીવનનો ઉત્સવ.</p>
-				<ul class="actions">
-					<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-				</ul>
-			</div>
-			<nav id="nav">
-				<ul class="links">
-					<li class="active"><a href="index.html">હોમ</a></li>
-					<li><a href="story.html">મારી કહાની</a></li>
-					<li><a href="contact.html">સંપર્ક</a></li>
-				</ul>
-			</nav>
-			<div id="main">
-				<article class="post featured">
-					<header class="major">
-						<h2>મારા આંગણે આપનું સ્વાગત છે</h2>
-						<p>હું સંજય શાહ, અને હું ગુજરાતી શબ્દોની લયમાં જીવનનું સૌંદર્ય શોધું છું.</p>
-					</header>
-					<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-				</article>
-				<section class="posts">
-    <article>
-        <header><span class="date">Poem 1</span><h2>જીવનની સુગંધ</h2></header>
-        <p>જીવનની "સુગંધ એ જ માણી શકે.. જેમના પાસે ખીલવા અને ખરવાની ક્ષણોની વચ્ચે મહેંકી જવાની આવડત હોય છે.</p>
-    </article>
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>સંજય શાહ · શબ્દ સૃષ્ટિ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet" />
+  <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
+  <style>
+    body, h1, h2, h3, p, a { font-family: 'Noto Serif Gujarati', 'Inter', serif !important; }
+    .logo-mark { background: var(--purple-600); color: white; padding: 2px 8px; border-radius: 4px; margin-right: 8px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-mark">SS</span>સંજય <span class="logo-last">શાહ</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">હોમ</a></li>
+        <li><a href="about.html">મારી કહાની</a></li>
+        <li><a href="contact.html">સંપર્ક</a></li>
+      </ul>
+      <button id="theme-toggle" aria-label="Toggle dark mode">🌓</button>
+    </div>
+  </nav>
 
-    <article>
-        <header><span class="date">Poem 2</span><h2>સુખ અને સાથ</h2></header>
-        <p>'આપતાં' આવડે એને જ મળે પછી એ 'સુખ' હોય કે 'સમય', 'પ્રેમ' હોય કે 'માન', 'હુંફ' હોય કે 'સાથ'.</p>
-    </article>
+  <section style="background: var(--purple-25); border-bottom: 1px solid var(--purple-100); padding: 5rem 0 4rem;">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <p class="section-label">લેખક · કવિ · વિચારક</p>
+          <h1 style="margin-bottom: 1.5rem;">શબ્દોના સથવારે<br><span style="color: var(--purple-600);">જીવનનો ઉત્સવ.</span></h1>
+          <p style="font-size: 1.125rem; color: var(--gray-500); max-width: 480px; margin-bottom: 2.5rem; line-height: 1.75;">
+            હું સંજય શાહ, અને હું ગુજરાતી શબ્દોની લયમાં જીવનનું સૌંદર્ય શોધું છું. મારો મંત્ર છે: જીવનને મન ભરીને જીવો અને સમાજને કંઈક અર્પણ કરો.
+          </p>
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="#poems" class="btn btn-primary">કવિતાઓ વાંચો</a>
+            <a href="about.html" class="btn btn-outline">મારી કહાની</a>
+          </div>
+        </div>
+        <div class="hero-illus-wrap">
+           <img src="images/pic01.jpg" alt="Sanjay Shah" style="width:100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <article>
-        <header><span class="date">Poem 3</span><h2>અનુભવની ઉપજ</h2></header>
-        <p>ઉંમર ને વાવી અમે અનુભવો લણ્યા છે... ઉપજ એ છે, તમ સરીખા સ્નેહીઓ મળ્યા છે. ✍️</p>
-    </article>
+  <section id="poems">
+    <div class="container">
+      <p class="section-label">શબ્દ સંગ્રહ</p>
+      <h2 class="section-title">હૃદયના ભાવો</h2>
+      <div class="grid-3">
+        <div class="card"><h3>જીવનની સુગંધ</h3><p>જીવનની સુગંધ એ જ માણી શકે જેમને મહેંકી જવાની આવડત હોય છે.</p></div>
+        <div class="card"><h3>સુખ અને સાથ</h3><p>'આપતાં' આવડે એને જ મળે પછી એ 'સુખ' હોય કે 'સમય', 'પ્રેમ' હોય કે 'માન'.</p></div>
+        <div class="card"><h3>સાચો સંબંધ</h3><p>જે સાંધા અને વાંધા વચ્ચે પણ અકબંધ રહે તેનું નામ "સંબંધ". 🌺</p></div>
+      </div>
+    </div>
+  </section>
 
-    <article>
-        <header><span class="date">Poem 4</span><h2>સાચી સફળતા</h2></header>
-        <p>સફળતા એને જ કહેવાય, કે જ્યારે તમે બીજા માટે પ્રેરણા બનો !! 💫</p>
-    </article>
+  <footer>
+    <div class="footer-inner"><p>&copy; 2026 સંજય શાહ. શબ્દ સૃષ્ટિ.</p></div>
+  </footer>
 
-    <article>
-        <header><span class="date">Poem 5</span><h2>હૃદયની ક્ષમતા</h2></header>
-        <p>યાદશક્તિ મગજ માટે સારી છે. પરંતુ... કયારેક ભૂલી જવાની ક્ષમતા હૃદય માટે ઘણી સારી છે.</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 6</span><h2>મળ્યાનો આનંદ</h2></header>
-        <p>ગુમાવ્યાનો હિસાબ કોણ રાખે વ્હાલા અહીં તો... કોણ મળ્યા એનો આનંદ છે!</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 7</span><h2>સાચો પ્રેમ</h2></header>
-        <p>જેના સાથે જીવવાની ઈચ્છા હોય એના સામે જીતવાની ઈચ્છા ના રાખવી જોઈએ. 😊</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 8</span><h2>જિંદગી માણો</h2></header>
-        <p>દરેક વખતે મનને મનાવવું એ જિંદગી જીવી કહેવાય, ક્યારેક મનનું પણ માનવું એ જિંદગી માણી કહેવાય. 😊</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 9</span><h2>જીવવાની મજા</h2></header>
-        <p>ઘણીવાર સારું જીવન જીવવા માટે... ઘણું યાદ રાખવા કરતા, ઘણું ભૂલી જવામાં મજા છે..!</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 10</span><h2>સંબંધોની મહેક</h2></header>
-        <p>કોઈ પણ સંબંધોમાં એક બીજાને ટોકવાની આદત જો બંધ થાય તો દરેક સંબંધો ફૂલની જેમ મહેંકી ઉઠે.</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 11</span><h2>જીવન જીવતા આવડવું જોઈએ</h2></header>
-        <p>અક્ક્ડ ઝાડ પહેલું તૂટી જાય, થોડું નમતા પણ આવડવું જોઈએ. સંબંધો સીવતા આવડવું જોઈએ.</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 12</span><h2>મૌનનું વાંચન</h2></header>
-        <p>'ધ્યાન' થી જોઈએ તો આંખોથી 'સાંભળી' શકાય છે, અને 'ધ્યાન' થી વાંચીએ તો મૌન પણ 'વાંચી' શકાય છે.</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 13</span><h2>પ્રેમનો સહારો</h2></header>
-        <p>"હું"પણાની કાચલી ઉતારી જુઓ તો સમજાશે... બસ એક પ્રેમના સહારે પણ જીવી જવાય છે.</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 14</span><h2>સાચો સંબંધ</h2></header>
-        <p>જે સાંધા અને વાંધા વચ્ચે પણ અકબંધ રહે તેનું નામ "સંબંધ". 🌺</p>
-    </article>
-
-    <article>
-        <header><span class="date">Poem 15</span><h2>Best Return Gift</h2></header>
-        <p>સ્મિત જો તમે કોઈના ચહેરા પર લાવી શકો તો એ તમે કુદરતને આપેલી Best Return Gift છે. 🌺</p>
-    </article>
-</section>
-			</div>
-		</div>
-        <script src="assets/js/main.js"></script>
-	</body>
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      var c = document.documentElement.getAttribute('data-theme');
+      var n = c === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', n);
+      localStorage.setItem('theme', n);
+    });
+  </script>
+</body>
 </html>
