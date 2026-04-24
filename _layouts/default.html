@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <title>{{ page.title }} | Sanjay Shah</title>
+</head>
+<body>
+  <header>
+    <button class="theme-toggle" onclick="toggleMode()">🌓 Switch Mode</button>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Home</a> | 
+      <a href="{{ '/story/' | relative_url }}">My Story</a> | 
+      <a href="{{ '/blog/' | relative_url }}">Blog</a> | 
+      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <script>
+    function toggleMode() {
+      const body = document.documentElement;
+      if (body.getAttribute('data-theme') === 'dark') {
+        body.setAttribute('data-theme', 'light');
+      } else {
+        body.setAttribute('data-theme', 'dark');
+      }
+    }
+  </script>
+</body>
+</html>
