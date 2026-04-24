@@ -1,12 +1,9 @@
-/* KRUTI'S THEME VARIABLES */
+/* KRUTI'S THEME VARIABLES - EXACT COLORS */
 :root {
   --purple-25: #f8f7ff;
-  --purple-50: #f0eeff;
   --purple-100: #e0dcff;
   --purple-600: #6c5fc7;
   --purple-900: #1a1035;
-  --gray-500: #9896a8;
-  
   --bg: var(--purple-25);
   --nav-bg: rgba(255, 255, 255, 0.8);
   --text: var(--purple-900);
@@ -28,11 +25,11 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
-  transition: all 0.3s ease;
+  font-family: 'Inter', -apple-system, sans-serif;
+  transition: background 0.3s ease;
 }
 
-/* NAVIGATION (Tabs in Gujarati) */
+/* NAVIGATION (GUJARATI TABS) */
 nav {
   background: var(--nav-bg);
   backdrop-filter: blur(12px);
@@ -40,7 +37,7 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  padding: 0.75rem 0;
+  padding: 0.8rem 0;
 }
 .nav-inner {
   max-width: 1100px;
@@ -50,12 +47,12 @@ nav {
   align-items: center;
   padding: 0 20px;
 }
-.nav-logo { font-weight: 700; text-decoration: none; color: var(--text); font-size: 1.2rem; }
-.nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; }
+.nav-logo { font-weight: 700; text-decoration: none; color: var(--text); font-size: 1.25rem; }
+.nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; padding: 0; }
 .nav-links a { text-decoration: none; color: var(--text); opacity: 0.7; font-size: 0.95rem; font-weight: 500; }
 .nav-links a.active { opacity: 1; color: var(--accent); font-weight: 600; }
 
-/* THEME TOGGLE (Icon Only) */
+/* THEME TOGGLE (ICON ONLY) */
 #theme-toggle {
   background: transparent;
   border: 1px solid var(--border);
@@ -67,14 +64,14 @@ nav {
   align-items: center;
 }
 
-/* BOOK ANIMATION - Side Buttons & Fixed Content */
-.book-container {
+/* BOOK CONTAINER - SIDE BUTTONS */
+.book-wrapper {
+  max-width: 1100px;
+  margin: 60px auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px; /* Moves buttons to the side */
-  margin: 60px auto;
-  max-width: 1100px;
+  gap: 50px; /* SPACE BETWEEN BOOK AND BUTTONS */
 }
 
 .book {
@@ -89,8 +86,7 @@ nav {
   width: 100%; height: 100%;
   transform-origin: left;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
-  z-index: 1;
+  transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .front, .back {
@@ -106,15 +102,18 @@ nav {
 }
 
 .back { transform: rotateY(180deg); }
-.page.flipped { transform: rotateY(-180deg); }
+.page.flipped { transform: rotateY(-180deg); z-index: 20; }
 
 .nav-btn {
-  width: 60px; height: 60px; border-radius: 50%;
+  width: 55px; height: 55px; border-radius: 50%;
   background: var(--accent); color: white; border: none;
   cursor: pointer; font-size: 1.5rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(108, 95, 199, 0.3);
+  transition: 0.2s;
 }
-.nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+.nav-btn:hover { transform: scale(1.1); }
+.nav-btn:disabled { opacity: 0.2; cursor: not-allowed; }
 
-.poem-body { flex-grow: 1; display: flex; align-items: center; text-align: center; font-size: 1.1rem; line-height: 1.8; }
-.page-num { text-align: center; font-weight: bold; color: var(--accent); border-top: 1px solid var(--border); padding-top: 10px; }
+/* POEM CONTENT */
+.poem-body { flex-grow: 1; display: flex; align-items: center; text-align: center; font-size: 1.15rem; line-height: 1.8; font-family: 'Noto Serif Gujarati', serif; }
+.page-num { text-align: center; font-weight: bold; color: var(--accent); border-top: 1px solid var(--border); padding-top: 10px; font-size: 0.9rem; }
