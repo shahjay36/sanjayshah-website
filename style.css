@@ -1,72 +1,73 @@
 :root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --text-main: #2d3436;
-  --accent: #6c5ce7;
-  --card-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  --primary-bg: #0f172a; /* Kruti's deep dark blue */
+  --nav-bg: rgba(30, 41, 59, 0.7);
+  --accent: #a855f7; /* Vibrant Purple */
+  --secondary: #3b82f6; /* Electric Blue */
+  --text-bright: #ffffff;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
-[data-theme='dark'] {
-  --primary-gradient: linear-gradient(135deg, #2d3436 0%, #000000 100%);
-  --glass-bg: rgba(45, 52, 54, 0.9);
-  --text-main: #dfe6e9;
-  --accent: #a29bfe;
+[data-theme='light'] {
+  --primary-bg: #f8fafc;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --accent: #7c3aed;
+  --text-bright: #1e293b;
+  --glass: rgba(0, 0, 0, 0.03);
 }
 
 body {
   margin: 0;
+  background: var(--primary-bg);
+  color: var(--text-bright);
+  font-family: 'Inter', 'Noto Serif Gujarati', sans-serif;
+  transition: 0.3s ease;
   min-height: 100vh;
-  background: var(--primary-gradient); /* This enables the scenery/gradient */
-  background-attachment: fixed; 
-  font-family: 'Noto Serif Gujarati', serif;
-  color: var(--text-main);
-  transition: background 0.5s ease; 
-  display: flex;
-  flex-direction: column;
 }
 
-/* Fixed Theme Toggle - Top Right */
-#theme-toggle {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
-  background: var(--glass-bg);
-  border: 1px solid var(--accent);
-  padding: 10px 15px;
-  border-radius: 50px;
-  cursor: pointer;
-  color: var(--accent);
-  font-weight: bold;
-  box-shadow: var(--card-shadow);
-}
-
-/* Glassmorphic Nav */
+/* Glass Navbar */
 nav {
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem 0;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--glass-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 .nav-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
-.nav-logo { font-size: 1.5rem; font-weight: 800; text-decoration: none; color: var(--accent); }
+.nav-logo { font-size: 1.4rem; font-weight: 800; color: var(--accent); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; }
 .nav-links { display: flex; list-style: none; gap: 2rem; margin: 0; }
-.nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; opacity: 0.8; }
-.nav-links a.active { opacity: 1; color: var(--accent); border-bottom: 2px solid var(--accent); }
+.nav-links a { color: var(--text-bright); text-decoration: none; font-weight: 500; opacity: 0.7; transition: 0.3s; }
+.nav-links a.active { opacity: 1; color: var(--accent); }
 
-/* The Modern Book */
+/* Theme Toggle (Top Right) */
+#theme-toggle {
+  position: fixed;
+  top: 85px;
+  right: 20px;
+  z-index: 1000;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+}
+
+/* The Book Aesthetic */
 .book-wrapper {
-  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px; /* Space for side buttons */
-  padding: 40px;
+  gap: 40px;
+  padding: 60px 20px;
 }
 
 .book {
-  width: 450px;
-  height: 600px;
+  width: 400px;
+  height: 550px;
   position: relative;
   transform-style: preserve-3d;
 }
@@ -74,7 +75,6 @@ nav {
 .page {
   position: absolute;
   width: 100%; height: 100%;
-  top: 0; left: 0;
   transform-origin: left;
   transform-style: preserve-3d;
   transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -84,37 +84,49 @@ nav {
   position: absolute;
   width: 100%; height: 100%;
   backface-visibility: hidden;
-  background: var(--glass-bg);
-  backdrop-filter: blur(5px);
-  padding: 50px 40px;
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 40px;
   box-sizing: border-box;
-  border-radius: 0 15px 15px 0;
-  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
+  border-radius: 0 12px 12px 0;
 }
 
-.back { transform: rotateY(180deg); border-radius: 15px 0 0 15px; }
+.back { transform: rotateY(180deg); border-radius: 12px 0 0 12px; }
 .page.flipped { transform: rotateY(-180deg); }
 
-.page-header { text-align: right; color: var(--accent); font-weight: bold; border-bottom: 1px solid var(--accent); margin-bottom: 20px; }
-.page-footer { margin-top: auto; padding-top: 10px; border-top: 1px dotted var(--accent); text-align: center; font-size: 0.9rem; }
-
-/* Attractive Buttons */
-.btn-nav {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: none;
-  background: var(--glass-bg);
-  color: var(--accent);
-  font-size: 1.5rem;
-  cursor: pointer;
-  box-shadow: var(--card-shadow);
-  transition: 0.3s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+/* Header/Footer Inside Pages */
+.page-header { 
+    text-align: right; 
+    font-size: 0.8rem; 
+    color: var(--accent); 
+    border-bottom: 1px solid var(--glass-border); 
+    padding-bottom: 8px; 
+    margin-bottom: 20px; 
+    text-transform: uppercase;
 }
-.btn-nav:hover { transform: scale(1.1); background: var(--accent); color: white; }
-.btn-nav:disabled { opacity: 0.3; cursor: not-allowed; }
+.page-footer { 
+    margin-top: auto; 
+    border-top: 1px solid var(--glass-border); 
+    padding-top: 15px; 
+    text-align: center; 
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* Modern Neon Buttons */
+.btn-nav {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-nav:hover:not(:disabled) { background: var(--accent); color: white; transform: scale(1.1); }
+.btn-nav:disabled { border-color: #475569; color: #475569; cursor: not-allowed; }
