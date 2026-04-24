@@ -1,35 +1,54 @@
 :root {
-  --purple-25: #fcfaff; --purple-50: #f4f3ff; --purple-100: #e0dcff;
-  --purple-600: #6c5fc7; --purple-900: #1a1035; --gray-500: #667085; --white: #ffffff;
+  --purple-600: #6c5fc7;
+  --purple-900: #1a1035;
+  --gray-200: #eaecf0;
+  --gray-500: #667085;
+  --white: #ffffff;
 }
-[data-theme='dark'] {
-  --purple-25: #0f0a1f; --purple-50: #1a1035; --purple-100: #2d244a;
-  --white: #1a1035; --purple-900: #f4f3ff; --gray-500: #98a2b3;
+
+body { 
+  margin: 0; 
+  background: var(--white); 
+  color: var(--purple-900); 
+  font-family: 'Inter', 'Noto Serif Gujarati', sans-serif; 
+  -webkit-font-smoothing: antialiased;
 }
-body { margin: 0; background: var(--white); color: var(--purple-900); font-family: 'Noto Serif Gujarati', serif; transition: 0.3s; line-height: 1.6; }
+
 .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
 
-/* Centered Navigation */
-nav { padding: 1.5rem 0; border-bottom: 1px solid var(--purple-100); position: sticky; top: 0; background: var(--white); z-index: 100; }
-.nav-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; max-width: 1100px; margin: 0 auto; }
-.nav-logo { text-decoration: none; color: var(--purple-900); font-weight: 700; font-size: 1.8rem; margin-bottom: 0.5rem; }
-.nav-links { display: flex; list-style: none; gap: 2.5rem; margin: 0; padding: 0; justify-content: center; width: 100%; }
-.nav-links a { text-decoration: none; color: var(--purple-900); font-weight: 600; font-size: 1.1rem; opacity: 0.7; transition: 0.2s; }
-.nav-links a.active, .nav-links a:hover { opacity: 1; color: var(--purple-600); border-bottom: 2px solid var(--purple-600); }
+/* Clean Navigation */
+nav { padding: 2rem 0; border-bottom: 1px solid var(--gray-200); }
+.nav-inner { display: flex; flex-direction: column; align-items: center; }
+.nav-logo { text-decoration: none; color: var(--purple-900); font-weight: 700; font-size: 1.5rem; letter-spacing: -0.5px; margin-bottom: 1.5rem; }
+.nav-links { display: flex; list-style: none; gap: 2.5rem; margin: 0; padding: 0; }
+.nav-links a { text-decoration: none; color: var(--gray-500); font-weight: 500; font-size: 1rem; transition: 0.2s; }
+.nav-links a.active { color: var(--purple-600); }
+.nav-links a:hover { color: var(--purple-900); }
 
-/* Larger Labels */
+/* Large Minimal Labels */
 .section-label { 
     color: var(--purple-600); 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    font-size: 1.5rem; /* Increased size */
-    letter-spacing: 2px; 
-    margin-bottom: 1.5rem; 
+    font-weight: 600; 
+    font-size: 1.25rem; 
+    margin-bottom: 1rem; 
     display: block;
 }
 
-.btn { padding: 1rem 2.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; display: inline-block; transition: 0.2s; border: none; cursor: pointer; font-size: 1.1rem; }
-.btn-primary { background: var(--purple-600); color: white; }
-.btn-outline { border: 2px solid var(--purple-600); color: var(--purple-600); background: transparent; }
-.grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
-.card { padding: 2.5rem; border: 1px solid var(--purple-100); border-radius: 16px; background: var(--white); box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+/* Contact Button - Exactly like Kruti's */
+.btn-contact {
+    display: inline-block;
+    padding: 1.25rem 2.5rem;
+    background: var(--purple-600);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: transform 0.2s, background 0.2s;
+    margin-top: 2rem;
+}
+
+.btn-contact:hover {
+    background: #5a4eb1;
+    transform: translateY(-2px);
+}
