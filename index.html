@@ -2,44 +2,29 @@
 <html lang="gu">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>સંજય શાહ | શબ્દ સૃષ્ટિ</title>
+  <title>સંજય શાહ | હોમ</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@400;700&display=swap" rel="stylesheet" />
-  <script>(function(){var t=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);})();</script>
 </head>
 <body>
   <nav><div class="nav-inner">
-    <a href="index.html" class="nav-logo"><span class="logo-mark">SS</span>સંજય શાહ</a>
+    <a href="index.html" class="nav-logo">સંજય શાહ</a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">હોમ</a></li>
       <li><a href="about.html">મારી કહાની</a></li>
       <li><a href="poems.html">કવિતાઓ</a></li>
       <li><a href="contact.html">સંપર્ક</a></li>
     </ul>
-    <button id="theme-toggle">🌓</button>
   </div></nav>
-
-  <section style="background: var(--purple-25); padding: 8rem 0 6rem; text-align: center;">
+  <section style="background: var(--purple-25); padding: 8rem 0; text-align: center;">
     <div class="container">
-      <p class="section-label">લેખક · કવિ · વિચારક</p>
+      <span class="section-label">લેખક · કવિ · વિચારક</span>
       <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem;">શબ્દોના સથવારે <br><span style="color: var(--purple-600);">જીવનનો ઉત્સવ.</span></h1>
-      <p style="font-size: 1.25rem; color: var(--gray-500); max-width: 700px; margin: 0 auto 3rem; line-height: 1.8;">
-        હું સંજય શાહ, અને હું ગુજરાતી શબ્દોની લયમાં જીવનનું સૌંદર્ય શોધું છું. મારો મંત્ર છે: જીવનને મન ભરીને જીવો અને સમાજને કંઈક અર્પણ કરો.
-      </p>
+      <p style="font-size: 1.3rem; color: var(--gray-500); max-width: 750px; margin: 0 auto 3rem;">હું સંજય શાહ, અને હું ગુજરાતી શબ્દોની લયમાં જીવનનું સૌંદર્ય શોધું છું.</p>
       <div style="display: flex; gap: 1.5rem; justify-content: center;">
-        <a href="poems.html" class="btn btn-primary">કવિતાઓ જુઓ</a>
-        <a href="about.html" class="btn btn-outline">મારી કહાની</a>
+        <a href="poems.html" class="btn btn-primary">કવિતાઓ વાંચો</a>
       </div>
     </div>
   </section>
-
-  <script>
-    document.getElementById('theme-toggle').addEventListener('click', function() {
-      var c = document.documentElement.getAttribute('data-theme');
-      var n = c === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', n);
-      localStorage.setItem('theme', n);
-    });
-  </script>
 </body>
 </html>
