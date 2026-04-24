@@ -1,6 +1,6 @@
 :root {
-  --page-bg: #fdfbf7;
-  --body-bg: #f4f1ea; /* The poetic background color */
+  --body-bg: #f4f1ea;   /* Warm Poetic Background */
+  --page-bg: #fdfbf7;   /* Clean Paper Color */
   --ink: #1a1a1b;
   --gold: #c4a484;
   --spine: #e2ddd3;
@@ -14,27 +14,29 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-nav { padding: 1.5rem 0; background: rgba(255,255,255,0.3); border-bottom: 1px solid var(--gold); }
-.nav-inner { display: flex; flex-direction: column; align-items: center; }
-.nav-links { display: flex; list-style: none; gap: 2rem; padding: 0; }
-.nav-links a { text-decoration: none; color: var(--ink); font-weight: 600; opacity: 0.6; }
+/* Centered Navigation */
+nav { padding: 1.5rem 0; border-bottom: 1px solid rgba(196, 164, 132, 0.3); background: rgba(255,255,255,0.2); }
+.nav-inner { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.nav-links { display: flex; list-style: none; gap: 2rem; padding: 0; margin: 0; }
+.nav-links a { text-decoration: none; color: var(--ink); font-weight: 600; opacity: 0.6; transition: 0.3s; }
 .nav-links a.active { opacity: 1; color: var(--gold); }
 
-/* The Landscape Book */
+/* 3D Book Container */
 .book-wrapper {
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 2000px;
-  padding: 2rem;
+  perspective: 2000px; /* Essential for 3D */
+  padding: 40px;
 }
 
 .book {
-  width: 800px; /* Landscape width */
-  height: 500px;
+  width: 700px; /* Total Landscape Width */
+  height: 450px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
@@ -42,48 +44,46 @@ nav { padding: 1.5rem 0; background: rgba(255,255,255,0.3); border-bottom: 1px s
 
 .page {
   position: absolute;
-  width: 400px; /* Half of the book width */
+  width: 350px; /* Half width - each page hinges */
   height: 100%;
   top: 0;
   right: 0;
   background: var(--page-bg);
-  box-shadow: inset 3px 0px 20px rgba(0,0,0,0.05);
   transform-origin: left;
   transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
   transform-style: preserve-3d;
-  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 30px;
   box-sizing: border-box;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: inset 3px 0px 20px rgba(0,0,0,0.02);
 }
 
-/* Page Spines and Corners */
-.page::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 2px;
-    background: var(--spine);
+/* The Spine/Shadow Effect */
+.page::after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 10px;
+  background: linear-gradient(to right, rgba(0,0,0,0.05), transparent);
 }
 
 .page.flipped {
   transform: rotateY(-180deg);
-  z-index: 2;
 }
 
-.poem-content {
+.poem-text {
   text-align: center;
-  font-size: 1.4rem;
-  line-height: 2.2;
+  font-size: 1.3rem;
+  line-height: 2;
 }
 
-/* Controls */
+/* Control Buttons */
 .book-controls {
-  padding-bottom: 3rem;
+  padding: 2rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
@@ -94,14 +94,15 @@ nav { padding: 1.5rem 0; background: rgba(255,255,255,0.3); border-bottom: 1px s
   background: var(--gold);
   color: white;
   border: none;
-  padding: 0.8rem 2rem;
+  padding: 10px 25px;
   cursor: pointer;
   border-radius: 4px;
   font-family: inherit;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .btn-nav:disabled {
-  background: #ccc;
+  background: #d1cfc9;
   cursor: not-allowed;
 }
