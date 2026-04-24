@@ -2,17 +2,18 @@
 <html lang="gu">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <title>{{ page.title }} | Sanjay Shah</title>
 </head>
 <body>
   <header>
-    <button class="theme-toggle" onclick="toggleMode()">🌓 Switch Mode</button>
+    <button class="theme-toggle" onclick="toggleMode()">🌓 બદલો (Switch Mode)</button>
     <nav>
-      <a href="{{ '/' | relative_url }}">Home</a> | 
-      <a href="{{ '/story/' | relative_url }}">My Story</a> | 
-      <a href="{{ '/blog/' | relative_url }}">Blog</a> | 
-      <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      <a href="{{ '/' | relative_url }}">🏠 હોમ</a>
+      <a href="{{ '/story/' | relative_url }}">📖 મારી કહાની</a>
+      <a href="{{ '/blog/' | relative_url }}">✍️ કવિતાઓ</a>
+      <a href="{{ '/contact/' | relative_url }}">📞 સંપર્ક</a>
     </nav>
   </header>
 
@@ -20,14 +21,15 @@
     {{ content }}
   </main>
 
+  <footer style="text-align: center; padding: 20px; color: #888; font-size: 0.8rem;">
+    &copy; 2026 સંજય શાહ. શબ્દોનું સર્જન.
+  </footer>
+
   <script>
     function toggleMode() {
       const body = document.documentElement;
-      if (body.getAttribute('data-theme') === 'dark') {
-        body.setAttribute('data-theme', 'light');
-      } else {
-        body.setAttribute('data-theme', 'dark');
-      }
+      const current = body.getAttribute('data-theme');
+      body.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
     }
   </script>
 </body>
