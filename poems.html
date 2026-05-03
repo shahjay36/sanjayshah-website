@@ -364,5 +364,33 @@
     });
     </script>
 </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/custom_js/jquery.bookblock.js"></script>
+
+<script>
+    $(function() {
+        var config = {
+            $bookBlock : $('#bb-bookblock'),
+            $navNext : $('#bb-nav-next'),
+            $navPrev : $('#bb-nav-prev')
+        };
+
+        config.$bookBlock.bookblock({
+            speed : 800,
+            shadowSides : 0.8,
+            shadowFlip : 0.7
+        });
+
+        config.$navNext.on('click touchstart', function() {
+            config.$bookBlock.bookblock('next');
+            return false;
+        });
+
+        config.$navPrev.on('click touchstart', function() {
+            config.$bookBlock.bookblock('prev');
+            return false;
+        });
+    });
+</script>
 </body>
 </html>
