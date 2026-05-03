@@ -1,157 +1,695 @@
-/* GLOBAL SETTINGS */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Gujarati:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+/* ─── CSS VARIABLES ─── */
 :root {
-    --bg-color: #f8f9fa;
-    --text-main: #333333;
-    --accent: #2d3436; /* Dark elegant accent */
-    --card-bg: #ffffff;
-    --header-font: 'Poppins', sans-serif;
+  --bg: #f8f9fc;
+  --bg2: #eef1f7;
+  --surface: #ffffff;
+  --surface2: #f0f4fa;
+  --border: rgba(30, 60, 120, 0.1);
+  --border2: rgba(30, 60, 120, 0.2);
+  --text: #0d1b3e;
+  --text2: #3a4a6b;
+  --text3: #6b7a99;
+  --accent: #1a3a8f;
+  --accent2: #2d5be3;
+  --accent-light: #e8eeff;
+  --gold: #b8943f;
+  --gold-light: #f7f0e0;
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 24px rgba(26,58,143,0.08), 0 1px 4px rgba(26,58,143,0.04);
+  --card-shadow-hover: 0 8px 40px rgba(26,58,143,0.14), 0 2px 8px rgba(26,58,143,0.08);
+  --nav-bg: rgba(248,249,252,0.92);
+  --poem-accent: #1a3a8f;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+[data-theme="dark"] {
+  --bg: #060d1f;
+  --bg2: #0c1630;
+  --surface: #101e3a;
+  --surface2: #162240;
+  --border: rgba(100, 140, 255, 0.12);
+  --border2: rgba(100, 140, 255, 0.22);
+  --text: #e8eeff;
+  --text2: #a8b8d8;
+  --text3: #6878a0;
+  --accent: #648aff;
+  --accent2: #90acff;
+  --accent-light: rgba(100, 138, 255, 0.12);
+  --gold: #d4a843;
+  --gold-light: rgba(212, 168, 67, 0.1);
+  --card-bg: #101e3a;
+  --card-shadow: 0 2px 24px rgba(0,0,0,0.4);
+  --card-shadow-hover: 0 8px 40px rgba(0,0,0,0.5);
+  --nav-bg: rgba(6,13,31,0.95);
+  --poem-accent: #648aff;
+}
+
+/* ─── RESET & BASE ─── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
 
 body {
-    font-family: var(--header-font);
-    background-color: var(--bg-color);
-    color: var(--text-main);
-    margin: 0;
-    line-height: 1.6;
+  font-family: 'Noto Serif Gujarati', 'Georgia', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  transition: background 0.4s ease, color 0.4s ease;
+  min-height: 100vh;
 }
 
-/* NAVIGATION (Centered like reference) */
+/* ─── NAVIGATION ─── */
 nav {
-    padding: 20px 0;
-    background: var(--card-bg);
-    border-bottom: 1px solid #eee;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
 }
 
 .nav-inner {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.nav-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-monogram {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(26,58,143,0.3);
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: 1px;
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: 0.01em;
+  text-decoration: none;
 }
 
 .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-main);
-    font-weight: 400;
-    transition: 0.3s;
+.nav-links li a {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 0.9rem;
+  color: var(--text2);
+  text-decoration: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  transition: var(--transition);
+  font-weight: 400;
 }
 
-.nav-links a.active {
-    font-weight: 600;
-    border-bottom: 2px solid var(--accent);
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--accent);
+  background: var(--accent-light);
 }
 
-/* SECTION HEADINGS */
-.section-header {
-    text-align: center;
-    margin: 60px 0 40px;
+#theme-toggle {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text2);
+  transition: var(--transition);
+}
+
+#theme-toggle:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+/* ─── CONTAINER ─── */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+main.container { padding-top: 100px; }
+
+/* ─── HERO SECTION ─── */
+.hero-section {
+  min-height: calc(100vh - 68px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0 4rem;
+  position: relative;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border2);
+  text-transform: uppercase;
+}
+
+.hero-quote {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.3;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.hero-quote::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 8rem;
+  color: var(--accent-light);
+  position: absolute;
+  top: -2rem;
+  left: -2rem;
+  line-height: 1;
+  z-index: -1;
+}
+
+[data-theme="dark"] .hero-quote::before {
+  color: rgba(100,138,255,0.08);
 }
 
 .hero-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 10px;
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.01em;
 }
 
-.header-line {
-    width: 60px;
-    height: 3px;
-    background: var(--accent);
-    margin: 0 auto 20px;
+.hero-name-accent {
+  color: var(--accent);
 }
 
 .hero-subtitle {
-    font-size: 1.1rem;
-    color: #777;
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.15rem;
+  color: var(--text3);
+  margin-bottom: 0.75rem;
+  font-weight: 300;
+  line-height: 1.8;
 }
 
-/* BOOKBLOCK WRAPPER */
-.bb-custom-wrapper {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto 100px;
-    position: relative;
+.hero-tagline {
+  font-size: 0.9rem;
+  color: var(--text3);
+  font-style: italic;
+  margin-bottom: 2.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--gold);
 }
 
-.bb-bookblock {
-    width: 100%;
-    height: 550px; /* Fixed height so it's never invisible */
-    background: #fff;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.08);
-    border-radius: 4px;
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.bb-item {
-    background: #fff;
-    width: 100%;
-    height: 100%;
+/* ─── BUTTONS ─── */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  border-radius: 50px;
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: var(--transition);
+  cursor: pointer;
+  border: none;
 }
 
-.poem-content {
-    padding: 60px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(26,58,143,0.3);
+}
+.btn-primary:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(26,58,143,0.4);
 }
 
-.poem-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 30px;
-    color: var(--accent);
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+}
+.btn-secondary:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* ─── DIVIDER ─── */
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  border-radius: 2px;
+  margin: 1.5rem 0 2rem;
+}
+
+/* ─── GLASS CARD ─── */
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+.glass-card:hover { box-shadow: var(--card-shadow-hover); }
+
+/* ─── PAGE HEADER ─── */
+.page-header {
+  padding: 4rem 0 3rem;
+  text-align: center;
+}
+
+.page-header .section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.page-header h1 {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+.page-header p {
+  font-size: 1.05rem;
+  color: var(--text3);
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* ─── ABOUT GRID ─── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.about-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+.about-card:hover { box-shadow: var(--card-shadow-hover); transform: translateY(-2px); }
+
+.about-card h3 {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-card p {
+  font-size: 0.95rem;
+  color: var(--text2);
+  line-height: 1.9;
+}
+
+/* ─── STORY SECTION ─── */
+.story-section {
+  padding: 3rem 0;
+}
+
+.story-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.story-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.story-section h1 {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2rem;
+  line-height: 1.25;
+}
+
+.story-body {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.1rem;
+  line-height: 2.1;
+  color: var(--text2);
+}
+
+.mother-poem {
+  margin: 3rem 0;
+  padding: 2.5rem 3rem;
+  background: var(--gold-light);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  position: relative;
+}
+
+.mother-poem::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 6rem;
+  color: var(--gold);
+  opacity: 0.25;
+  position: absolute;
+  top: -1rem;
+  left: 1.5rem;
+  line-height: 1;
+}
+
+.mother-poem-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.mother-poem p {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 2.2;
+  color: var(--text);
+}
+
+/* ─── POEMS PAGE ─── */
+.poems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: 4rem;
+}
+
+.poem-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.poem-card::before {
+  content: '\201C';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 7rem;
+  color: var(--accent);
+  opacity: 0.06;
+  position: absolute;
+  top: -1rem;
+  right: 1.5rem;
+  line-height: 1;
+}
+
+.poem-card:hover {
+  box-shadow: var(--card-shadow-hover);
+  transform: translateY(-3px);
+  border-color: var(--border2);
+}
+
+.poem-number {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+
+.poem-card h2 {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
 .poem-body {
-    font-size: 1.25rem;
-    color: #555;
-    font-weight: 300;
-    line-height: 1.8;
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 1.05rem;
+  line-height: 2.1;
+  color: var(--text2);
+  font-weight: 300;
+  white-space: pre-line;
 }
 
-/* NAVIGATION BUTTONS (Elara Style) */
-.bb-nav {
-    text-align: center;
-    margin-top: 40px;
+.poem-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.bb-btn {
-    padding: 12px 35px;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 2px;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: 0.3s;
-    display: inline-block;
-    margin: 0 10px;
+.poem-tag {
+  font-size: 0.75rem;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid var(--border2);
 }
 
-.bb-btn:hover {
-    background: #000;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+/* ─── CONTACT PAGE ─── */
+.contact-section {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: calc(100vh - 160px);
+  justify-content: center;
 }
 
-/* MOBILE */
+.contact-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3.5rem;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: var(--card-shadow);
+}
+
+.contact-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  border: 1px solid var(--border2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  font-size: 1.5rem;
+}
+
+.contact-card h1 {
+  font-family: 'Noto Serif Gujarati', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  font-size: 1rem;
+  color: var(--text3);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.contact-email-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  transition: var(--transition);
+}
+
+.contact-email-link:hover {
+  background: var(--accent-light);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.btn-email {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 20px rgba(26,58,143,0.3);
+  transition: var(--transition);
+}
+
+.btn-email:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(26,58,143,0.4);
+}
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 2rem;
+  text-align: center;
+  color: var(--text3);
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: 3rem;
+}
+
+footer span {
+  color: var(--gold);
+}
+
+/* ─── SCROLL ANIMATIONS ─── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-up:nth-child(2) { transition-delay: 0.1s; }
+.fade-up:nth-child(3) { transition-delay: 0.2s; }
+.fade-up:nth-child(4) { transition-delay: 0.3s; }
+
+/* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
-    .bb-bookblock { height: 450px; }
-    .poem-content { padding: 30px; }
-    .poem-body { font-size: 1rem; }
+  .nav-inner { padding: 0 1rem; }
+  .nav-links li a { padding: 0.4rem 0.6rem; font-size: 0.8rem; }
+  .nav-monogram { width: 34px; height: 34px; font-size: 13px; }
+  .logo { font-size: 1rem; }
+
+  main.container { padding-top: 80px; }
+  .hero-section { padding: 3rem 0 2rem; }
+  .hero-quote { font-size: 1.6rem; }
+  .hero-title { font-size: 2rem; }
+  .hero-quote::before { font-size: 5rem; left: -0.5rem; top: -1.5rem; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .glass-card { padding: 2rem; }
+  .mother-poem { padding: 1.5rem; }
+  .poem-card { padding: 1.75rem; }
+  .contact-card { padding: 2rem; }
+  .hero-btns { flex-direction: column; }
+  .btn { width: 100%; text-align: center; }
+}
+
+@media (max-width: 480px) {
+  .nav-links { gap: 0; }
+  .nav-links li a { padding: 0.35rem 0.45rem; font-size: 0.75rem; }
 }
