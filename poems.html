@@ -5,107 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>સંજય શાહ | કવિતાઓ</title>
     
+    <!-- Core BookBlock CSS -->
     <link rel="stylesheet" type="text/css" href="css/custom_css/default.css" />
     <link rel="stylesheet" type="text/css" href="css/custom_css/bookblock.css" />
     <link rel="stylesheet" href="style.css">
-    
-    <style>
-        :root {
-            --purple-600: #6c5fc7;
-            --purple-900: #1a1035;
-            --white: #ffffff;
-        }
-
-        /* SIDE-BY-SIDE LAYOUT */
-        .bb-custom-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px auto;
-            position: relative;
-            max-width: 1100px;
-            padding: 0 20px;
-        }
-
-        .bb-bookblock {
-            width: 500px;
-            height: 650px;
-            background: var(--white);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-            border-radius: 4px;
-        }
-
-        /* SIDE ARROW BUTTONS */
-        .nav-arrow {
-            background: var(--purple-600);
-            color: white !important;
-            width: 55px;
-            height: 55px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 20px;
-            transition: 0.3s;
-            z-index: 100;
-            box-shadow: 0 4px 15px rgba(108, 95, 199, 0.3);
-            flex-shrink: 0;
-        }
-
-        .nav-arrow:hover {
-            background: var(--purple-900);
-            transform: scale(1.1);
-        }
-
-        /* POEM CONTENT STYLING */
-        .bb-item {
-            background: white;
-            padding: 40px;
-            overflow-y: auto; /* Adds scroll if poem is too long */
-        }
-
-        .poem-container {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        .poem-title {
-            color: var(--purple-600);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            font-weight: bold;
-        }
-
-        .poem-text {
-            font-family: 'Noto Serif Gujarati', serif;
-            font-size: 1.2rem;
-            line-height: 1.8;
-            color: var(--purple-900);
-            white-space: pre-line; /* Keeps line breaks */
-        }
-
-        .page-counter {
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: bold;
-            color: var(--purple-600);
-            font-size: 1rem;
-            letter-spacing: 1px;
-        }
-    </style>
     
     <script src="js/custom_js/modernizr.custom.js"></script>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">સંજય શાહ</a>
@@ -114,209 +23,236 @@
                 <li><a href="about.html">મારી કહાની</a></li>
                 <li><a href="poems.html" class="active">કવિતાઓ</a></li>
                 <li><a href="contact.html">સંપર્ક</a></li>
+                <li>
+                    <button id="theme-toggle" aria-label="Toggle Mode">
+                        <svg id="theme-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+                        </svg>
+                    </button>
+                </li>
             </ul>
-            <button id="theme-toggle" aria-label="Toggle Mode">
-                <svg id="theme-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
-                </svg>
-            </button>
         </div>
     </nav>
 
-    <div class="bb-custom-wrapper">
-        <a id="bb-nav-prev" href="#" class="nav-arrow">❮</a>
+    <main class="container">
+        <header class="page-header">
+            <h1 class="hero-title">મારી રચનાઓ</h1>
+            <p class="hero-subtitle">શબ્દો દ્વારા હૃદયની અભિવ્યક્તિ</p>
+        </header>
 
-        <div id="bb-bookblock" class="bb-bookblock">
-            
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">જીવનની સુગંધ</div>
-                    <div class="poem-text">જીવનની સુગંધ એ જ માણી શકે,
-                    જેમની પાસે ખીલવાની આવડત હોય.
-                    ખરવાની ક્ષણો તો આવતી રહેશે,
-                    પણ મહેંકી જવાની ક્ષણ સાચવવી હોય.
-                    પુષ્પ બનીને જે સ્મિત વેરે છે,
-                    એ જ હૃદયમાં કાયમ રહે છે.</div>
+        <div class="bb-custom-wrapper">
+            <!-- Left Navigation Arrow -->
+            <a id="bb-nav-prev" href="#" class="nav-arrow">←</a>
+
+            <div id="bb-bookblock" class="bb-bookblock glass-card">
+                
+                <!-- POEM 1 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">જીવનની સુગંધ</h2>
+                        <p class="poem-text">જીવનની સુગંધ એ જ માણી શકે,
+                        જેમની પાસે ખીલવાની આવડત હોય.
+                        ખરવાની ક્ષણો તો આવતી રહેશે,
+                        પણ મહેંકી જવાની ક્ષણ સાચવવી હોય.
+                        પુષ્પ બનીને જે સ્મિત વેરે છે,
+                        એ જ હૃદયમાં કાયમ રહે છે.</p>
+                    </div>
                 </div>
+
+                <!-- POEM 2 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">આપવાની કળા</h2>
+                        <p class="poem-text">'આપતાં' આવડે એને જ મળે,
+                        પછી એ સુખ હોય કે સમય.
+                        પ્રેમ હોય કે માનનો દરિયો,
+                        હુંફ હોય કે સાથનો વિજય.
+                        ખાલી હાથે આવ્યા હતા આપણે,
+                        પણ ભરેલા હૃદયે જવું છે.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 3 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">અનુભવની ઉપજ</h2>
+                        <p class="poem-text">ઉંમરને વાવી અમે અનુભવો લણ્યા છે,
+                        કેટલાય ઉનાળા હસીને ખમ્યા છે.
+                        આજ તેની ઉપજમાં જોયું તો,
+                        તમ સરીખા સ્નેહીઓ મળ્યા છે.
+                        સંબંધોની આ મૂડી સૌથી વહાલી,
+                        બાકી બધી દુનિયાદારી ખાલી.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 4 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">ગમતા રહીએ</h2>
+                        <p class="poem-text">એક બીજાને ગમતા રહીએ,
+                        કંઈ ખટકે તો ખમતા રહીએ.
+                        સંજોગો કેવા પણ સજૉય જગમાં,
+                        થોડા થોડા નમતા રહીએ.
+                        નમવામાં જે મજા છે સાહેબ,
+                        એ અક્કડ રહીને જીવવામાં નથી.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 5 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">સાચી સફળતા</h2>
+                        <p class="poem-text">સફળતા એને જ કહેવાય,
+                        કે જ્યારે તમે બીજા માટે પ્રેરણા બનો !! 💫
+                        તમારા શબ્દો કોઈનું આંસુ લૂછે,
+                        તમારું મૌન કોઈનું દર્દ સમજે.
+                        દુનિયા તો જીતે છે પોતાના માટે,
+                        તમે બીજાના હૃદયમાં જીતતા શીખો.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 6 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">મન અને સંજોગો</h2>
+                        <p class="poem-text">સંજોગો બદલાય ત્યારે મન બદલવું સહેલું છે,
+                        પણ મન બદલાય ત્યારે સંજોગો બદલવા અઘરા છે.
+                        દુનિયાને જોવાની દ્રષ્ટિ બદલો,
+                        તો આખું જગત સુંદર લાગશે.
+                        સંધ્યાકાળે પણ સૂરજ જે આશા આપે,
+                        એવી જ આશા મનમાં કાયમ રાખવી.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 7 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">વિશ્વાસની આંખો</h2>
+                        <p class="poem-text">સંબંધોમાં વિશ્વાસ એટલે,
+                        આંખો બંધ કરીને બીજાના હાથમાં હાથ મૂકવો.
+                        પડવાનો ભય ત્યારે જ રહેતો નથી,
+                        જ્યારે સામેની વ્યક્તિમાં શ્રદ્ધા હોય.
+                        કાચ જેવો વિશ્વાસ તૂટી જાય,
+                        પણ હૃદયનો વિશ્વાસ કાયમ વણાઈ જાય.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 8 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">સમયની ધીરજ</h2>
+                        <p class="poem-text">સમયની પાસે દરેક પ્રશ્નનો જવાબ છે,
+                        બસ થોડી ધીરજ રાખવાની જરૂર છે.
+                        વહેલી સવારે જે અંધારું હઠે છે,
+                        એ જ પ્રકાશના આગમનનો સંકેત છે.
+                        ઉતાવળમાં ક્યારેય રસ્તો મળતો નથી,
+                        શાંત ચિત્તે જ કિનારો દેખાય છે.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 9 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">હાસ્યનું વરદાન</h2>
+                        <p class="poem-text">હાસ્ય એ ઈશ્વરનું આપેલું,
+                        સૌથી સુંદર અને અમૂલ્ય વરદાન છે.
+                        ગમે તેટલી પીડા હોય જીવનમાં,
+                        એક સ્મિત બધું જ ભુલાવી શકે છે.
+                        તમારા ચહેરા પરનું હાસ્ય સાચવજો,
+                        એ જ તમારી સાચી ઓળખ અને શાન છે.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 10 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">મૌન અને શબ્દો</h2>
+                        <p class="poem-text">શબ્દોની તાકાત મૌન કરતા વધારે હોય છે,
+                        જો તે સાચા સમયે અને પ્રેમથી બોલાય.
+                        તીર જેવી વાણી ક્યારેય વાપરવી નહીં,
+                        જે સાંભળનારના હૃદયને વીંધી નાખે.
+                        શબ્દો તો એવા હોવા જોઈએ,
+                        જે કોઈના સૂકા જીવનમાં અમૃત ભરી દે.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 11 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">જિંદગીનું પુસ્તક</h2>
+                        <p class="poem-text">જિંદગી એક સુંદર પુસ્તક જેવી છે,
+                        દરેક નવો દિવસ એક નવું પાનું છે.
+                        ગઈકાલના પાનામાં જે ભૂલો કરી,
+                        આજના પાને તેને સુધારવાની તક છે.
+                        દરેક પ્રકરણમાં શીખતા રહેવું જોઈએ,
+                        તો જ આ પુસ્તક વાંચવું સાર્થક છે.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 12 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">ક્ષમાની શક્તિ</h2>
+                        <p class="poem-text">ભૂલ સ્વીકારવી એ સૌથી મોટી શક્તિ છે,
+                        તે પ્રગતિના નવા દ્વાર ખોલી આપે છે.
+                        અભિમાનમાં જે ડૂબેલા રહે છે,
+                        તેઓ ક્યારેય શાંતિ પામતા નથી.
+                        ક્ષમા માંગવી એ નબળાઈ નથી,
+                        પણ ઉમદા સંસ્કારની મોટી સાબિતી છે.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 13 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">સાચી ખુશી</h2>
+                        <p class="poem-text">સાચી ખુશી ત્યારે જ અનુભવાય છે,
+                        જ્યારે તમે બીજાના ચહેરા પર સ્મિત લાવો.
+                        પોતાના માટે તો પશુઓ પણ જીવે છે,
+                        તમે માણસ બનીને પરોપકારમાં જીવો.
+                        નાની એવી મદદ પણ જો દિલથી કરાય,
+                        તો તે ઈશ્વરની સૌથી મોટી ભક્તિ ગણાય.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 14 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">સપનાઓની પાંખ</h2>
+                        <p class="poem-text">સપનાઓ એ જ સાચા હોય છે,
+                        જે તમને રાત્રે શાંતિથી ઊંઘવા ન દે.
+                        આંખો ખુલી રાખીને જે જોવાય,
+                        તેને પૂરા કરવા માટે જિંદગી હોમાય.
+                        પડકારો તો આવશે રસ્તામાં ઘણા,
+                        પણ મક્કમ મન હોય તો રસ્તા મળી જાય.</p>
+                    </div>
+                </div>
+
+                <!-- POEM 15 -->
+                <div class="bb-item">
+                    <div class="poem-container">
+                        <h2 class="poem-title">જ્ઞાન અને પ્રેમ</h2>
+                        <p class="poem-text">જ્ઞાન વહેંચવાથી હંમેશા વધે છે,
+                        અને પ્રેમ વહેંચવાથી દુનિયા સુંદર બને છે.
+                        હૃદયમાં જો કરુણાનો દીવો સળગે,
+                        તો અંધકાર ક્યારેય આસપાસ ન ભટકે.
+                        ચાલો આપણે એવા સમાજની રચના કરીએ,
+                        જ્યાં શબ્દો નહીં પણ માણસાઈ બોલે.</p>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">આપવાની કળા</div>
-                    <div class="poem-text">'આપતાં' આવડે એને જ મળે,
-                    પછી એ સુખ હોય કે સમય.
-                    પ્રેમ હોય કે માનનો દરિયો,
-                    હુંફ હોય કે સાથનો વિજય.
-                    ખાલી હાથે આવ્યા હતા આપણે,
-                    પણ ભરેલા હૃદયે જવું છે.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">અનુભવની ઉપજ</div>
-                    <div class="poem-text">ઉંમરને વાવી અમે અનુભવો લણ્યા છે,
-                    કેટલાય ઉનાળા હસીને ખમ્યા છે.
-                    આજ તેની ઉપજમાં જોયું તો,
-                    તમ સરીખા સ્નેહીઓ મળ્યા છે.
-                    સંબંધોની આ મૂડી સૌથી વહાલી,
-                    બાકી બધી દુનિયાદારી ખાલી.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">ગમતા રહીએ</div>
-                    <div class="poem-text">એક બીજાને ગમતા રહીએ,
-                    કંઈ ખટકે તો ખમતા રહીએ.
-                    સંજોગો કેવા પણ સજૉય જગમાં,
-                    થોડા થોડા નમતા રહીએ.
-                    નમવામાં જે મજા છે સાહેબ,
-                    એ અક્કડ રહીને જીવવામાં નથી.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">સાચી સફળતા</div>
-                    <div class="poem-text">સફળતા એને જ કહેવાય,
-                    કે જ્યારે તમે બીજા માટે પ્રેરણા બનો.
-                    તમારા શબ્દો કોઈનું આંસુ લૂછે,
-                    તમારું મૌન કોઈનું દર્દ સમજે.
-                    દુનિયા તો જીતે છે પોતાના માટે,
-                    તમે બીજાના હૃદયમાં જીતતા શીખો.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">મન અને સંજોગો</div>
-                    <div class="poem-text">સંજોગો બદલાય ત્યારે મન બદલવું સહેલું છે,
-                    પણ મન બદલાય ત્યારે સંજોગો બદલવા અઘરા છે.
-                    દુનિયાને જોવાની દ્રષ્ટિ બદલો,
-                    તો આખું જગત સુંદર લાગશે.
-                    સંધ્યાકાળે પણ સૂરજ જે આશા આપે,
-                    એવી જ આશા મનમાં કાયમ રાખવી.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">વિશ્વાસની આંખો</div>
-                    <div class="poem-text">સંબંધોમાં વિશ્વાસ એટલે,
-                    આંખો બંધ કરીને બીજાના હાથમાં હાથ મૂકવો.
-                    પડવાનો ભય ત્યારે જ રહેતો નથી,
-                    જ્યારે સામેની વ્યક્તિમાં શ્રદ્ધા હોય.
-                    કાચ જેવો વિશ્વાસ તૂટી જાય,
-                    પણ હૃદયનો વિશ્વાસ કાયમ વણાઈ જાય.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">સમયની ધીરજ</div>
-                    <div class="poem-text">સમયની પાસે દરેક પ્રશ્નનો જવાબ છે,
-                    બસ થોડી ધીરજ રાખવાની જરૂર છે.
-                    વહેલી સવારે જે અંધારું હઠે છે,
-                    એ જ પ્રકાશના આગમનનો સંકેત છે.
-                    ઉતાવળમાં ક્યારેય રસ્તો મળતો નથી,
-                    શાંત ચિત્તે જ કિનારો દેખાય છે.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">હાસ્યનું વરદાન</div>
-                    <div class="poem-text">હાસ્ય એ ઈશ્વરનું આપેલું,
-                    સૌથી સુંદર અને અમૂલ્ય વરદાન છે.
-                    ગમે તેટલી પીડા હોય જીવનમાં,
-                    એક સ્મિત બધું જ ભુલાવી શકે છે.
-                    તમારા ચહેરા પરનું હાસ્ય સાચવજો,
-                    એ જ તમારી સાચી ઓળખ અને શાન છે.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">મૌન અને શબ્દો</div>
-                    <div class="poem-text">શબ્દોની તાકાત મૌન કરતા વધારે હોય છે,
-                    જો તે સાચા સમયે અને પ્રેમથી બોલાય.
-                    તીર જેવી વાણી ક્યારેય વાપરવી નહીં,
-                    જે સાંભળનારના હૃદયને વીંધી નાખે.
-                    શબ્દો તો એવા હોવા જોઈએ,
-                    જે કોઈના સૂકા જીવનમાં અમૃત ભરી દે.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">જિંદગીનું પુસ્તક</div>
-                    <div class="poem-text">જિંદગી એક સુંદર પુસ્તક જેવી છે,
-                    દરેક નવો દિવસ એક નવું પાનું છે.
-                    ગઈકાલના પાનામાં જે ભૂલો કરી,
-                    આજના પાને તેને સુધારવાની તક છે.
-                    દરેક પ્રકરણમાં શીખતા રહેવું જોઈએ,
-                    તો જ આ પુસ્તક વાંચવું સાર્થક છે.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">ક્ષમાની શક્તિ</div>
-                    <div class="poem-text">ભૂલ સ્વીકારવી એ સૌથી મોટી શક્તિ છે,
-                    તે પ્રગતિના નવા દ્વાર ખોલી આપે છે.
-                    અભિમાનમાં જે ડૂબેલા રહે છે,
-                    તેઓ ક્યારેય શાંતિ પામતા નથી.
-                    ક્ષમા માંગવી એ નબળાઈ નથી,
-                    પણ ઉમદા સંસ્કારની મોટી સાબિતી છે.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">સાચી ખુશી</div>
-                    <div class="poem-text">સાચી ખુશી ત્યારે જ અનુભવાય છે,
-                    જ્યારે તમે બીજાના ચહેરા પર સ્મિત લાવો.
-                    પોતાના માટે તો પશુઓ પણ જીવે છે,
-                    તમે માણસ બનીને પરોપકારમાં જીવો.
-                    નાની એવી મદદ પણ જો દિલથી કરાય,
-                    તો તે ઈશ્વરની સૌથી મોટી ભક્તિ ગણાય.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">સપનાઓની પાંખ</div>
-                    <div class="poem-text">સપનાઓ એ જ સાચા હોય છે,
-                    જે તમને રાત્રે શાંતિથી ઊંઘવા ન દે.
-                    આંખો ખુલી રાખીને જે જોવાય,
-                    તેને પૂરા કરવા માટે જિંદગી હોમાય.
-                    પડકારો તો આવશે રસ્તામાં ઘણા,
-                    પણ મક્કમ મન હોય તો રસ્તા મળી જાય.</div>
-                </div>
-            </div>
-
-            <div class="bb-item">
-                <div class="poem-container">
-                    <div class="poem-title">જ્ઞાન અને પ્રેમ</div>
-                    <div class="poem-text">જ્ઞાન વહેંચવાથી હંમેશા વધે છે,
-                    અને પ્રેમ વહેંચવાથી દુનિયા સુંદર બને છે.
-                    હૃદયમાં જો કરુણાનો દીવો સળગે,
-                    તો અંધકાર ક્યારેય આસપાસ ન ભટકે.
-                    ચાલો આપણે એવા સમાજની રચના કરીએ,
-                    જ્યાં શબ્દો નહીં પણ માણસાઈ બોલે.</div>
-                </div>
-            </div>
-
+            <!-- Right Navigation Arrow -->
+            <a id="bb-nav-next" href="#" class="nav-arrow">→</a>
         </div>
-
-        <a id="bb-nav-next" href="#" class="nav-arrow">❯</a>
 
         <div class="page-counter">
-            પાનું: <span id="current-page-num">1</span> / <span id="total-pages">0</span>
+            પાનું: <span id="current-page">1</span> / <span id="total-pages">0</span>
         </div>
-    </div>
+    </main>
 
+    <!-- SCRIPTS -->
     <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
     <script src="js/custom_js/jquerypp.custom.js"></script>
     <script src="js/custom_js/jquery.bookblock.js"></script>
@@ -326,9 +262,10 @@
         var $book = $('#bb-bookblock');
         var $navNext = $('#bb-nav-next');
         var $navPrev = $('#bb-nav-prev');
-        var $current = $('#current-page-num');
+        var $current = $('#current-page');
         var $total = $('#total-pages');
 
+        // Initialize BookBlock
         $book.bookblock({
             speed: 800,
             shadowSides: 0.8,
@@ -339,15 +276,18 @@
             }
         });
 
+        // Set Total Pages
         $total.text($book.bookblock('getItemsCount'));
 
+        // Navigation
         $navNext.on('click', function(e) { e.preventDefault(); $book.bookblock('next'); });
         $navPrev.on('click', function(e) { e.preventDefault(); $book.bookblock('prev'); });
 
-        // Theme Toggle Logic
+        // Theme Switcher Logic
         const themeBtn = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
-        
+        const html = document.documentElement;
+
         function updateIcon(theme) {
             if(theme === 'dark') {
                 themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>';
@@ -357,16 +297,16 @@
         }
 
         themeBtn.addEventListener('click', () => {
-            const current = document.documentElement.getAttribute('data-theme');
+            const current = html.getAttribute('data-theme');
             const target = current === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', target);
+            html.setAttribute('data-theme', target);
             localStorage.setItem('theme', target);
             updateIcon(target);
         });
 
-        const saved = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', saved);
-        updateIcon(saved);
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        updateIcon(savedTheme);
     });
     </script>
 </body>
