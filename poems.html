@@ -1,173 +1,317 @@
 <!DOCTYPE html>
-<html lang="gu">
+<html lang="gu" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>કવિતાઓ | સંજય શાહ</title>
-    <!-- Importing a clean font similar to the reference site -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" type="text/css" href="css/custom_css/bookblock.css" />
-    <script src="js/custom_js/modernizr.custom.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>કવિતાઓ | સંજય શાહ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="nav-inner">
-            <div class="logo">સંજય શાહ</div>
-            <ul class="nav-links">
-                <li><a href="index.html">હોમ</a></li>
-                <li><a href="about.html">મારી કહાની</a></li>
-                <li><a href="poems.html" class="active">કવિતાઓ</a></li>
-                <li><a href="contact.html">સંપર્ક</a></li>
-                <li><button id="theme-toggle">🌓</button></li>
-            </ul>
-        </div>
-    </nav>
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo-wrap">
+      <div class="nav-monogram">SS</div>
+      <span class="logo">સંજય શાહ</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">હોમ</a></li>
+      <li><a href="about.html">મારી કહાની</a></li>
+      <li><a href="poems.html" class="active">કવિતાઓ</a></li>
+      <li><a href="contact.html">સંપર્ક</a></li>
+      <li>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <svg id="theme-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <main class="container">
-        <!-- THE REAPPEARING HEADINGS -->
-        <header class="section-header">
-            <h1 class="hero-title">મારી રચનાઓ</h1>
-            <div class="header-line"></div>
-            <p class="hero-subtitle">લાગણીઓના અક્ષર - કાવ્ય સંગ્રહ</p>
-        </header>
+<main class="container">
 
-        <div class="bb-custom-wrapper">
-            <div id="bb-bookblock" class="bb-bookblock">
-                
-                <!-- Poem 1 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">જીવનની સુગંધ</h2>
-                        <div class="poem-body">જીવનની "સુગંધ એ જ માણી શકે..<br><br>જેમની પાસે.....<br><br>🌱 "ખીલવા 🌱 અને 🍃 ખરવા 🍃 ની ક્ષણોની વચ્ચે.....<br><br>*"મહેંકી"* જવાની આવડત હોય છે.....!</div>
-                    </div>
-                </div>
+  <!-- PAGE HEADER -->
+  <div class="page-header fade-up">
+    <span class="section-label">✦ Poems & Thoughts</span>
+    <h1>મારી રચનાઓ</h1>
+    <p>લાગણીઓના અક્ષર — કાવ્ય સંગ્રહ</p>
+  </div>
 
-                <!-- Poem 2 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">સાચું સુખ</h2>
-                        <div class="poem-body">'આપતાં' આવડે એને જ મળે<br>પછી એ 'સુખ' હોય કે 'સમય',<br>'પ્રેમ' હોય કે 'માન',<br>'હુંફ' હોય કે 'સાથ'.</div>
-                    </div>
-                </div>
+  <!-- POEMS GRID -->
+  <div class="poems-grid">
 
-                <!-- Poem 3 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">અનુભવની ખેતી</h2>
-                        <div class="poem-body">ઉંમર ને વાવી અમે અનુભવો લણ્યા છે...<br><br>ઉપજ એ છે,<br>તમ સરીખા સ્નેહીઓ મળ્યા છે..... ✍️</div>
-                    </div>
-                </div>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૧</div>
+      <h2>જીવનની સુગંધ</h2>
+      <div class="poem-body">જીવનની "સુગંધ" એ જ માણી શકે...
 
-                <!-- Poem 4 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">સફળતા</h2>
-                        <div class="poem-body">સફળતા એને જ કહેવાય,<br><br>કે જ્યારે તમે બીજા માટે પ્રેરણા બનો !! 💫</div>
-                    </div>
-                </div>
+જેમની પાસે.....
 
-                <!-- Poem 5 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">ભૂલી જવાની ક્ષમતા</h2>
-                        <div class="poem-body">*યાદશક્તિ મગજ માટે સારી છે.*<br>*પરંતુ...*<br>*કયારેક ભૂલી જવાની ક્ષમતા..*<br>*હૃદય માટે ઘણી સારી છે.*</div>
-                    </div>
-                </div>
+🌱 "ખીલવા" 🌱 અને 🍃 "ખરવા" 🍃 ની ક્ષણોની વચ્ચે.....
 
-                <!-- Poem 6 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">આનંદનો હિસાબ</h2>
-                        <div class="poem-body">🔰✨🌸🌞🌼<br><br>ગુમાવ્યા નો હિસાબ કોણ રાખે વ્હાલા અહી તો...<br>કોણ મળ્યા એનો આનંદ છે<br><br>🔰💖🌿🌺🌟</div>
-                    </div>
-                </div>
+"મહેંકી" જવાની આવડત હોય છે.....!</div>
+      <div class="poem-footer">
+        <span class="poem-tag">જીવન</span>
+        <span class="poem-tag">પ્રેરણા</span>
+      </div>
+    </article>
 
-                <!-- Poem 7 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">જીતવાની ઈચ્છા</h2>
-                        <div class="poem-body">જેના સાથે જીવવાની ઈચ્છા હોય એના સામે<br>જીતવાની ઈચ્છા ના રાખવી જોઈએ 😊</div>
-                    </div>
-                </div>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૨</div>
+      <h2>સાચું સુખ</h2>
+      <div class="poem-body">'આપતાં' આવડે એને જ મળે —
 
-                <!-- Poem 8 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">જિંદગી જીવવી vs માણવી</h2>
-                        <div class="poem-body">દરેક વખતે મનને મનાવવું એ જિંદગી જીવી કહેવાય,<br><br>ક્યારેક મનનું પણ માનવું એ જિંદગી માણી કહેવાય. 😊🏵️</div>
-                    </div>
-                </div>
+પછી એ 'સુખ' હોય કે 'સમય',
+'પ્રેમ' હોય કે 'માન',
+'હુંફ' હોય કે 'સાથ'.</div>
+      <div class="poem-footer">
+        <span class="poem-tag">સુખ</span>
+        <span class="poem-tag">સ્નેહ</span>
+      </div>
+    </article>
 
-                <!-- Poem 9 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">મજા</h2>
-                        <div class="poem-body">ઘણીવાર સારું જીવન જીવવા માટે...<br>ઘણું યાદ રાખવા કરતા,<br>ઘણું ભૂલી જવામાં મજા છે..! 😊</div>
-                    </div>
-                </div>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૩</div>
+      <h2>અનુભવની ખેતી</h2>
+      <div class="poem-body">ઉંમર ને વાવી અમે અનુભવો લણ્યા છે...
 
-                <!-- Poem 10 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">સંબંધોની મહેક</h2>
-                        <div class="poem-body">કોઈ પણ સંબંધો માં એક બીજા ને ટોકવાની આદત જો બંધ થાય તો દરેક સંબંધો ફૂલ ની જેમ મહેંકી ઉઠે.<br><br>આના માટે એક બીજા ને ગમે એ કરવાનું નથી પણ જે કરીયે તે એક બીજાએ ગમતું કરવાનું છે.🙂🌸🙏🏻</div>
-                    </div>
-                </div>
+ઉપજ એ છે,
+તમ સરીખા સ્નેહીઓ મળ્યા છે..... ✍️</div>
+      <div class="poem-footer">
+        <span class="poem-tag">અનુભવ</span>
+        <span class="poem-tag">સ્નેહ</span>
+      </div>
+    </article>
 
-                <!-- Poem 11 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">જીવનની આવડત</h2>
-                        <div class="poem-body" style="font-size: 0.95rem; line-height: 1.4;">*આટલું તો આવડવું જ જોઈએ*<br>*જીવન જીવતા આવડવું જોઈએ* ..<br>*સંબંધો સીવતા આવડવું જોઈએ*...<br>*અમૃત નહિ મળે રોજ બરોજ*...<br>*ઝેર પીતા પણ આવડવું જોઈએ* ..<br>*વાત વાત માં રૂઠવું સારું નહિ* ...<br>*સહન કરતા પણ આવડવું જોઈએ* ....<br>*અક્ક્ડ ઝાડ પહેલું તૂટી જાય* ...<br>*થોડું નમતા પણ આવડવું જોઈએ* ...<br>*બધું કઈ પચી નહિ શકે* ...<br>*થોડું વહેંચતા પણ આવડવું જોઈએ* ...<br>*બેઠાડું જિંદગી શ્રાપ છે* ....<br>*થોડું નાચતા પણ આવડવું જોઈએ* ...<br>*ચોપડીઓ અચૂક વાંચો* ...<br>*ચેહરા વાંચતા પણ આવડવું જોઈએ* ...<br>*અબોલા ક્યારેય નહિ લેતા* ...<br>*મન મોટું રાખતા પણ આવડવું જોઈએ* ..<br>*સોગિયું મોઢું કોને ગમે*...<br>*ખડખડાટ હસતા પણ આવડવું જોઈએ* ...<br>*સંઘરાખોરી દુષણ છે*...<br>*દાન આપતા પણ આવડવું જોઈએ* ...<br>*ખોટા વખાણ કરવા ચાપલુસી છે* ...<br>*અરીસો બનતા પણ આવડવું જોઈએ* !!....😊🙏</div>
-                    </div>
-                </div>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૪</div>
+      <h2>સફળતા</h2>
+      <div class="poem-body">સફળતા એને જ કહેવાય,
 
-                <!-- Poem 12 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">ધ્યાન અને મૌન</h2>
-                        <div class="poem-body">'ધ્યાન' થી જોઈએ તો, આંખોથી 'સાંભળી' શકાય છે..<br><br>અને, 'ધ્યાન' થી વાંચીએ તો, મૌન પણ 'વાંચી' શકાય છે..🌺 😊</div>
-                    </div>
-                </div>
+કે જ્યારે તમે બીજા માટે પ્રેરણા બનો !! 💫</div>
+      <div class="poem-footer">
+        <span class="poem-tag">સફળતા</span>
+        <span class="poem-tag">પ્રેરણા</span>
+      </div>
+    </article>
 
-                <!-- Poem 13 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">હુંપણું</h2>
-                        <div class="poem-body">સંબંધના હુંફાળા શ્વાસ ભરી જીવી જવાય છે...<br>તારું મારું નહી, આપણું કરી જીવી જવાય છે...<br><br>"હું"પણા ની કાચલી ઉતારી જુઓ તો સમજાશે...<br>બસ એક પ્રેમના સહારે પણ જીવી જવાય છે...😊🌺🙏🏻</div>
-                    </div>
-                </div>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૫</div>
+      <h2>ભૂલી જવાની ક્ષમતા</h2>
+      <div class="poem-body">યાદશક્તિ મગજ માટે સારી છે.
+પરંતુ...
+ક્યારેક ભૂલી જવાની ક્ષમતા..
+હ્રદય માટે ઘણી સારી છે.</div>
+      <div class="poem-footer">
+        <span class="poem-tag">ક્ષમા</span>
+        <span class="poem-tag">હ્રદય</span>
+      </div>
+    </article>
 
-                <!-- Poem 14 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">સંબંધ</h2>
-                        <div class="poem-body">જે સાંધા અને વાંધા વચ્ચે પણ<br>અકબંધ રહે તેનું નામ "સંબંધ"🌺</div>
-                    </div>
-                </div>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૬</div>
+      <h2>આનંદનો હિસાબ</h2>
+      <div class="poem-body">🔰✨🌸🌞🌼
 
-                <!-- Poem 15 -->
-                <div class="bb-item">
-                    <div class="poem-content">
-                        <h2 class="poem-title">શ્રેષ્ઠ ભેટ</h2>
-                        <div class="poem-body">તમારા ચહેરા પરનું સ્મિત એ કુદરતે તમને આપેલી Gift છે<br>પણ સાહેબ એ જ સ્મિત જો તમે કોઈના ચહેરા પર લાવી શકો<br>તો એ તમે કુદરતને આપેલી Best Return Gift છે 🌺 😊 🙏</div>
-                    </div>
-                </div>
+ગુમાવ્યાનો હિસાબ કોણ રાખે, વ્હાલા, અહીં તો...
+કોણ મળ્યા — એનો આનંદ છે.
 
-            </div>
+🔰💖🌿🌺🌟</div>
+      <div class="poem-footer">
+        <span class="poem-tag">આનંદ</span>
+        <span class="poem-tag">સંબંધ</span>
+      </div>
+    </article>
 
-            <nav class="bb-nav">
-                <a id="bb-nav-prev" href="#" class="bb-btn">← પહેલા</a>
-                <a id="bb-nav-next" href="#" class="bb-btn">પછી →</a>
-            </nav>
-        </div>
-    </main>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૭</div>
+      <h2>જીતવાની ઈચ્છા</h2>
+      <div class="poem-body">જેના સાથે જીવવાની ઈચ્છા હોય,
+એના સામે
+જીતવાની ઈચ્છા ન રાખવી જોઈએ. 😊</div>
+      <div class="poem-footer">
+        <span class="poem-tag">સ્નેહ</span>
+        <span class="poem-tag">સંબંધ</span>
+      </div>
+    </article>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/custom_js/jquery.bookblock.js"></script>
-    <script src="js/script.js"></script>
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૮</div>
+      <h2>જિંદગી — જીવવી vs માણવી</h2>
+      <div class="poem-body">દરેક વખતે મનને મનાવવું —
+એ જિંદગી જીવી કહેવાય,
 
+ક્યારેક મનનું પણ માનવું —
+એ જિંદગી માણી કહેવાય. 😊🏵️</div>
+      <div class="poem-footer">
+        <span class="poem-tag">જીવન</span>
+        <span class="poem-tag">ફિલોસોફી</span>
+      </div>
+    </article>
+
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૦૯</div>
+      <h2>મજા</h2>
+      <div class="poem-body">ઘણીવાર સારું જીવન જીવવા માટે...
+ઘણું યાદ રાખવા કરતા,
+ઘણું ભૂલી જવામાં મજા છે..! 😊</div>
+      <div class="poem-footer">
+        <span class="poem-tag">ક્ષમા</span>
+        <span class="poem-tag">આનંદ</span>
+      </div>
+    </article>
+
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૧૦</div>
+      <h2>સંબંધોની મહેક</h2>
+      <div class="poem-body">કોઈ પણ સંબંધોમાં એક બીજાને ટોકવાની આદત જો બંધ થાય,
+તો દરેક સંબંધો ફૂલ ની જેમ મહેંકી ઉઠે.
+
+આ માટે એક બીજાને ગમે એ કરવાનું નથી —
+પણ જે કરીએ તે, એક બીજાએ ગમતું કરવાનું છે. 🙂🌸🙏🏻</div>
+      <div class="poem-footer">
+        <span class="poem-tag">સંબંધ</span>
+        <span class="poem-tag">પ્રેમ</span>
+      </div>
+    </article>
+
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૧૧</div>
+      <h2>જીવનની આવડત</h2>
+      <div class="poem-body">આટલું તો આવડવું જ જોઈએ —
+જીવન જીવતાં આવડવું જોઈએ,
+સંબંધો સીવતાં આવડવું જોઈએ...
+
+અમૃત નહિ મળે રોજ-બ-રોજ,
+ઝેર પીતાં પણ આવડવું જોઈએ...
+
+વાત-વાત માં રૂઠવું સારું નહિ,
+સહન કરતાં પણ આવડવું જોઈએ...
+
+અક્ક્ડ ઝાડ પહેલું તૂટી જાય,
+થોડું નમતાં પણ આવડવું જોઈએ...
+
+બધું કઈ પચી નહિ શકે,
+થોડું વહેંચતાં પણ આવડવું જોઈએ...
+
+બેઠાડું જિંદગી શ્રાપ છે,
+થોડું નાચતાં પણ આવડવું જોઈએ...
+
+ચોપડીઓ અચૂક વાંચો,
+ચહેરા વાંચતાં પણ આવડવું જોઈએ...
+
+અબોલા ક્યારેય નહિ લેતા,
+મન મોટું રાખતાં પણ આવડવું જોઈએ...
+
+સોગિયું મોઢું કોને ગમે?
+ખડખડાટ હસતાં પણ આવડવું જોઈએ...
+
+સંઘરાખોરી દૂષણ છે,
+દાન આપતાં પણ આવડવું જોઈએ...
+
+ખોટા વખાણ ચાપલૂસી છે,
+અરીસો બનતાં પણ આવડવું જોઈએ!! 😊🙏</div>
+      <div class="poem-footer">
+        <span class="poem-tag">જીવનદ્રષ્ટિ</span>
+        <span class="poem-tag">પ્રેરણા</span>
+      </div>
+    </article>
+
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૧૨</div>
+      <h2>ધ્યાન અને મૌન</h2>
+      <div class="poem-body">'ધ્યાન' થી જોઈએ તો,
+આંખોથી 'સાંભળી' શકાય છે...
+
+અને, 'ધ્યાન' થી વાંચીએ તો,
+મૌન પણ 'વાંચી' શકાય છે... 🌺 😊</div>
+      <div class="poem-footer">
+        <span class="poem-tag">ઊંડાણ</span>
+        <span class="poem-tag">ભાવ</span>
+      </div>
+    </article>
+
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૧૩</div>
+      <h2>હુંપણું</h2>
+      <div class="poem-body">સંબંધના હુંફાળા શ્વાસ ભરી જીવી જવાય છે...
+તારું-મારું નહી, 'આપણું' કરી જીવી જવાય છે...
+
+"હું"પણાની કાચલી ઉતારી જુઓ તો સમજાશે...
+બસ — એક પ્રેમના સહારે પણ જીવી જવાય છે... 😊🌺🙏🏻</div>
+      <div class="poem-footer">
+        <span class="poem-tag">પ્રેમ</span>
+        <span class="poem-tag">સ્નેહ</span>
+      </div>
+    </article>
+
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૧૪</div>
+      <h2>સંબંધ</h2>
+      <div class="poem-body">જે સાંધા અને વાંધા વચ્ચે પણ
+અકબંધ રહે —
+તેનું નામ "સંબંધ" 🌺</div>
+      <div class="poem-footer">
+        <span class="poem-tag">સંબંધ</span>
+        <span class="poem-tag">વિશ્વાસ</span>
+      </div>
+    </article>
+
+    <article class="poem-card fade-up">
+      <div class="poem-number">રચના ૧૫</div>
+      <h2>શ્રેષ્ઠ ભેટ</h2>
+      <div class="poem-body">તમારા ચહેરા પરનું સ્મિત —
+એ કુદરતે તમને આપેલી Gift છે.
+
+પણ...
+એ જ સ્મિત જો તમે
+કોઈના ચહેરા પર લાવી શકો —
+
+તો એ, તમે કુદરતને આપેલી
+Best Return Gift છે. 🌺 😊 🙏</div>
+      <div class="poem-footer">
+        <span class="poem-tag">સ્મિત</span>
+        <span class="poem-tag">ભેટ</span>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <span>શબ્દો — હ્રદયના</span> · ✦ · © 2025 સંજય શાહ
+</footer>
+
+<script>
+  const themeBtn = document.getElementById('theme-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const html = document.documentElement;
+
+  function updateIcon(theme) {
+    themeIcon.innerHTML = theme === 'dark'
+      ? '<circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>'
+      : '<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>';
+  }
+
+  themeBtn.addEventListener('click', () => {
+    const target = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', target);
+    localStorage.setItem('theme', target);
+    updateIcon(target);
+  });
+
+  const saved = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', saved);
+  updateIcon(saved);
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.05 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
