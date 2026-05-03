@@ -332,6 +332,28 @@
     const savedTheme = localStorage.getItem('theme') || 'light';
     html.setAttribute('data-theme', savedTheme);
     updateIcon(savedTheme);
+        <!-- 1. JQUERY FIRST -->
+    <script src="vendor/jquery/jquery-3.7.1.min.js"></script>
+
+    <!-- 2. BOOKBLOCK SECOND -->
+    <script src="js/custom_js/jquerypp.custom.js"></script>
+    <script src="js/custom_js/jquery.bookblock.js"></script>
+
+    <!-- 3. YOUR CUSTOM BUTTON LOGIC THIRD -->
+    <script>
+    $(function() {
+        var $book = $('#bb-bookblock');
+        // This is the "brain" that tells the buttons what to do
+        $('#bb-nav-next').on('click', function(e) { 
+            e.preventDefault(); 
+            $book.bookblock('next'); 
+        });
+        $('#bb-nav-prev').on('click', function(e) { 
+            e.preventDefault(); 
+            $book.bookblock('prev'); 
+        });
+    });
+    </script>
 </script>
 </body>
 </html>
